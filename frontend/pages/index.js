@@ -1,14 +1,12 @@
- import React from 'react';
-
-//  class Home extends React.Component {
-//      render() {
-//          return <p>Kia Ora!</p>
-//      }
-//  }
+//  import React from 'react'; //not needed with next.js
+import Link from 'next/link';
 
  const Home = props => (
      <div>
          <p>Kia Ora!</p>
+         <Link href="/sell">
+         <a>Hokona! </a>
+         </Link>
      </div>
  )
 
