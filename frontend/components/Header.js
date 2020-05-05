@@ -1,4 +1,4 @@
- const Header = () => {
+ const Header = () => (
      <div>
          <div className="bar">
              <a href="">Sick Fits</a>
@@ -8,6 +8,6 @@
          </div>
          <div>Cart </div>
      </div>
- }//end const Header
+ )//end const Header
 
  export default Header; 
