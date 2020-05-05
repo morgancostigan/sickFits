@@ -1,1 +1,0 @@
-{"version":3,"file":"static/webpack/static/development/pages/index.js.3f0ed3f0f2d1f50a0a89.hot-update.js","sources":["webpack:///./pages/index.js"],"sourcesContent":[" import React from 'react';\n\n class Home extends React.Component {\n     re\n }"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AACA;AACA;;;;;;;;;;;;;;;;;;;;;;;;AAAA;;;;;;;;;;;;;;;;;;;;;;;A","sourceRoot":""}
