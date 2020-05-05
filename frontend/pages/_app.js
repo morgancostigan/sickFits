@@ -1,4 +1,5 @@
  import App, { Container } from 'next/app';
+ import Page from '../components/Page'; 
 
  class MyApp extends App {
     render (){
@@ -6,12 +7,12 @@
 
         return(
             <Container>
-                <p>I'm everywhere all at once.</p>
-                <Component /> 
-                 
+                <Page>
+                    <Component /> 
+                </Page>
             </Container>
-        )
-    }
- }
+        )//end return 
+    } 
+ }//end MyApp class
 
  export default MyApp; 
