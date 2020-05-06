@@ -8,15 +8,15 @@ const theme = {
      red: '#FF0000',
      black: '#393939',
      grey: '#3A3A3A',
-     lightgrey: '#E1E1E1',
-     lightblue: '#dcf8fc',
+     lightGrey: '#E1E1E1',
+     lightBlue: '#dcf8fc',
      offwhite: '#EDEDED',
      maxWidth: '1000px',
      bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)',
 };//end theme, these are strings rather than true css 
 
 const StyledPage = styled.div`
-    background: ${props => props.theme.lightblue};
+    background: ${props => props.theme.lightBlue};
     color: ${props => props.theme.black};
 `;
 

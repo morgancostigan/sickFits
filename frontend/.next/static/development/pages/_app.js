@@ -33,7 +33,7 @@ var StyledHeader = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].hea
 })([".bar{border-bottom:10px solid ", ";display:grid;grid-template-columns:auto 1fr;justify-content:space-between;align-items:stretch;@media (max-width:1300px){grid-template-columns:1fr;justify-content:center;}}.sub-bar{display:grid;grid-template-columns:1fr auto;border-bottom:1px solid ", ";}"], function (props) {
   return props.theme.black;
 }, function (props) {
-  return props.theme.lightgrey;
+  return props.theme.lightGrey;
 }); //end StyledHeader
 
 var Header = function Header() {
@@ -271,8 +271,8 @@ var theme = {
   red: '#FF0000',
   black: '#393939',
   grey: '#3A3A3A',
-  lightgrey: '#E1E1E1',
-  lightblue: '#dcf8fc',
+  lightGrey: '#E1E1E1',
+  lightBlue: '#dcf8fc',
   offwhite: '#EDEDED',
   maxWidth: '1000px',
   bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)'
@@ -282,7 +282,7 @@ var StyledPage = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.w
   displayName: "Page__StyledPage",
   componentId: "sc-4u7a64-0"
 })(["background:", ";color:", ";"], function (props) {
-  return props.theme.lightblue;
+  return props.theme.lightBlue;
 }, function (props) {
   return props.theme.black;
 });
