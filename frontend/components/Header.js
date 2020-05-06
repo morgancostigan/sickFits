@@ -21,8 +21,26 @@ const Logo = styled.h1`
     }
 `;//end Logo
 
+const StyledHeader = styled.header`
+    .bar {
+        border-bottom: 10px solid ${props => props.theme.black};
+        display: grid;
+        grid-template-columns: auto 1fr;
+        justify-content: space-between;
+        align-items: stretch;
+        @media (max-width: 1300px) {
+            grid-template-columns:  1fr;
+            justify-content: center; 
+        }
+    }
+
+    .sub-bar{
+         
+    }
+`; //end StyledHeader
+
 const Header = () => (
-    <div>
+    <StyledHeader>
         <div className="bar">
             <Logo>
                 <Link href="/">
@@ -34,8 +52,8 @@ const Header = () => (
         <div className="sub-bar">
             <p>Search</p>
         </div>
-        <div>Cart </div>
-    </div>
+        <div>Cart</div>
+    </StyledHeader>
 )//end const Header
 
 export default Header; 
