@@ -1,16 +1,21 @@
- import Nav from './Nav';
- 
- const Header = () => (
-     <div>
-         <div className="bar">
-             <a href="">Sick Fits</a>
-             <Nav />
-         </div>
-         <div className="sub-bar">
-             <p>Search</p>
-         </div>
-         <div>Cart </div>
-     </div>
- )//end const Header
+import Nav from './Nav';
+import Link from 'next/link'; 
 
- export default Header; 
+const Header = () => (
+    <div>
+        <div className="bar">
+            <h1>
+                <Link href="/">
+                    <a>Sick Fits</a>
+                </Link>
+            </h1> 
+            <Nav />
+        </div>
+        <div className="sub-bar">
+            <p>Search</p>
+        </div>
+        <div>Cart </div>
+    </div>
+)//end const Header
+
+export default Header; 
