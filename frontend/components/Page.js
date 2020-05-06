@@ -1,15 +1,21 @@
 import React, { Component } from 'react'; 
 import Header from '../components/Header';
 import Meta from './Meta';
+import styled from 'styled-components'; 
 
-class Page extends Component {
+const MyButton = styled.button`
+    background: red;
+    font-size: 100px;
+`; 
+
+class Page extends Component { 
     render() {
         return (
             <div>
                 <Meta />
                 <Header />
-                {this.props.children}
-                <p>I'm everywhere all at once.</p>
+                <MyButton>Click me, you fool.</MyButton>
+                {this.props.children} 
             </div>
         )//end return
     }//end render
