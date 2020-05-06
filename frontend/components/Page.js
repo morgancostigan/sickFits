@@ -17,7 +17,7 @@ const theme = {
 };//end theme, these are strings rather than true css 
 
 const StyledPage = styled.div`
-    background: ${props => props.theme.lightBlue};
+    background: white;
     color: ${props => props.theme.black};
 `;
 
@@ -49,7 +49,10 @@ injectGlobal`
         font-size: 1.5rem; 
         line-height: 2;
         font-family: 'radnika_next' ;
-
+    }
+    a {
+        text-decoration: none;
+        color: ${theme.black};  /* this is outside the ThemeProvider, hence no props  */
     }
 `;
 

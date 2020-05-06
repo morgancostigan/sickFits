@@ -5,7 +5,7 @@ const NavStyles = styled.ul`
   padding: 0;
   display: flex;
   justify-self: end;
-  font-size: 2rem;
+  font-size: 2rem; 
   a,
   button {
     padding: 1rem 3rem;
@@ -25,7 +25,7 @@ const NavStyles = styled.ul`
     &:before {
       content: '';
       width: 2px;
-      background: ${props => props.theme.lightgrey};
+      background: ${props => props.theme.lightGrey};
       height: 100%;
       left: 0;
       position: absolute;
