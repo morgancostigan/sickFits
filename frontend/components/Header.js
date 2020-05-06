@@ -1,5 +1,5 @@
 import Nav from './Nav';
-import Link from 'next/link'; 
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const Logo = styled.h1`
@@ -35,6 +35,9 @@ const StyledHeader = styled.header`
     }
 
     .sub-bar{
+        display: grid;
+        grid-template-columns: 1fr auto;
+        border-bottom:  1px solid ${props => props.theme.lightgrey};
          
     }
 `; //end StyledHeader
@@ -46,7 +49,7 @@ const Header = () => (
                 <Link href="/">
                     <a>SF</a>
                 </Link>
-            </Logo> 
+            </Logo>
             <Nav />
         </div>
         <div className="sub-bar">
