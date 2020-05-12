@@ -1,4 +1,4 @@
-//  Uses GraphQL Yoga and Prisma binding to connect Apollo to the Prisma DB 
+//  Uses Prisma binding to connect Apollo to the Prisma DB and allow querying via JS
 
 const { Prisma } = require ('prisma-binding');  //require rather than import because of the limitations of node.js
 const db = new Prisma({
