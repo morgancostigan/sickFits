@@ -5,7 +5,7 @@ type Dog {
 }
 
 type Mutation {
-    hi: String!
+    createDog(name: String!): Dog
 }
 
 type Query {
