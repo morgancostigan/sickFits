@@ -5,15 +5,15 @@ type User {
 }
 
 type Item {
-  id: ID! @unique
+  id: ID! @id
   title: String!
   description: String!
   image: String
   largeImage: String
   price: Int!
-  createdAt: DateTime! 
+  createdAt: DateTime! @createdAt
   # DateTime is not a graphQL datatype, but is in Prisma
-  updatedAt: DateTime! 
+  updatedAt: DateTime! @updatedAt
   # user: User!  
   # we will bring this back in later
 }
