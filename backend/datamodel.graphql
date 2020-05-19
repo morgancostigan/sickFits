@@ -1,3 +1,5 @@
+# TO TELL PRISMA WHAT WE NEED
+
 type User {
   id: ID! @id
   name: String!

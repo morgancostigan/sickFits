@@ -1,13 +1,18 @@
-# this contains anything that will be visible in the graphQL API
+# this contains anything that will be publicly visible in the graphQL API
 
-type Dog {
-    name: String!
-}
+# vvvvv ALLOWS US TO USE DATATYPES FROM PRISMA WITHOUT REWRITING THEM HERE vvvvv
+# import * from './generated/prisma.graphql'
 
 type Mutation {
-    createDog(name: String!): Dog
+    createItem(
+        title: String,
+        description: String,
+        price: Int,
+        image: String,
+        largeImage: String
+    ): Item!
 }
 
 type Query {
-    dogs: [Dog]!
+    items: [Item]! 
 }
