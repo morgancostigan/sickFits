@@ -1,7 +1,8 @@
 const Query = {
-    // dogs(parent, args, ctx, info ) {// dogs() = dogs: function()
-    //     return [{name: 'Lazlo'}, {name: 'Nadja'}];
-    // }
+    async items(parent, args, ctx, info) {
+        const items =  ctx.db.query.items();
+        return items;
+    }
 };
 
 module.exports = Query;
