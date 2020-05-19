@@ -1,8 +1,12 @@
+const { forwardto } = require('prisma-binding');
+
 const Query = {
-    async items(parent, args, ctx, info) {
-        const items =  ctx.db.query.items();
-        return items;
-    }
+    items: forwardto('db'), //this directs the request through prisma.graphql so you don't need to rewrite it
+
+    // async items(parent, args, ctx, info) {
+    //     const items =  ctx.db.query.items();
+    //     return items;
+    // }
 };
 
 module.exports = Query;
