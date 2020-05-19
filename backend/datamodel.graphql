@@ -3,3 +3,17 @@ type User {
   name: String!
   email: String!
 }
+
+type Item {
+  id: ID! @unique
+  title: String!
+  description: String!
+  image: String
+  largeImage: String
+  price: Int!
+  createdAt: DateTime! 
+  # DateTime is not a graphQL datatype, but is in Prisma
+  updatedAt: DateTime! 
+  # user: User!  
+  # we will bring this back in later
+}
