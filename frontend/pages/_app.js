@@ -5,6 +5,7 @@
 
 
  class MyApp extends App {
+    // next.js runs getInitialProps before the initial render
     static async getInitialProps({ Component, ctx}) {
         let pageProps = {};
         if (Component.getInitialProps ) {
@@ -12,9 +13,10 @@
         }
         // vvv this exposes the query to the user vvv
         pageProps.query = ctx.query;
+        return { pageProps };
     }
     render (){
-        const { Component, apollo } = this.props;
+        const { Component, apollo, pageProps } = this.props;
 
         return(
             <Container>
