@@ -2,20 +2,22 @@
  import Page from '../components/Page'; 
  import { ApolloProvider } from 'react-apollo';
  import withData from '../lib/withData';
- 
+
 
  class MyApp extends App {
     render (){
-        const { Component } = this.props;
+        const { Component, apollo } = this.props;
 
         return(
             <Container>
-                <Page>
-                    <Component /> 
-                </Page>
+                <ApolloProvider client={apollo}>
+                    <Page>
+                        <Component />
+                    </Page>
+                </ApolloProvider>
             </Container>
         )//end return 
     } 
  }//end MyApp class
 
- export default MyApp; 
+ export default withData(MyApp); 
