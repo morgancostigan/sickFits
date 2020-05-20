@@ -5,6 +5,14 @@
 
 
  class MyApp extends App {
+    static async getInitialProps({ Component, ctx}) {
+        let pageProps = {};
+        if (Component.getInitialProps ) {
+            pageProps = Component.getInitialProps(ctx);
+        }
+        // vvv this exposes the query to the user vvv
+        pageProps.query = ctx.query;
+    }
     render (){
         const { Component, apollo } = this.props;
 
