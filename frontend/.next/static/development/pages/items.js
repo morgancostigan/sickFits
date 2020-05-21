@@ -37,7 +37,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    query ALL_ITEMS_QUERY {\n        items {\n            id\n            title\n            decription\n            price\n            image\n            largeImage\n        }\n    }\n "]);
+  var data = _taggedTemplateLiteral(["\n    query ALL_ITEMS_QUERY {\n        items {\n            id\n            title\n            description\n            price\n            image\n            largeImage\n        }\n    }\n "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -86,9 +86,12 @@ function (_Component) {
           lineNumber: 24
         },
         __self: this
-      }, function (payload) {
+      }, function (_ref) {
+        var data = _ref.data,
+            error = _ref.error,
+            loading = _ref.loading;
         console.log({
-          payload: payload
+          data: data
         });
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
@@ -96,7 +99,7 @@ function (_Component) {
             lineNumber: 27
           },
           __self: this
-        }, "I'm query's kid, do you know my dad?");
+        }, "Heeeeeere's ", data.items.length, " items!");
       }));
     }
   }]);

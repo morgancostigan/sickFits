@@ -7,7 +7,7 @@
         items {
             id
             title
-            decription
+            description
             price
             image
             largeImage
@@ -22,9 +22,9 @@
                  <p>Items!</p>
                  {/* vvv the only allowed child of a query is a function vvv */}
                  <Query query={ALL_ITEMS_QUERY}> 
-                    {(payload) => {
-                        console.log({payload});
-                        return <p>I'm query's kid, do you know my dad?</p>
+                    {({ data, error, loading }) => {
+                        console.log({data});
+                        return <p>Heeeeeere's {data.items.length} items!</p>
                     }}
                  </Query>
              </div>
