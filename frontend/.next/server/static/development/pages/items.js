@@ -186,10 +186,24 @@ function (_Component) {
         console.log({
           data: data
         });
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        if (loading) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 27
+          },
+          __self: this
+        }, "loading...");
+        if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28
+          },
+          __self: this
+        }, "Error: ", error.message);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 29
           },
           __self: this
         }, "Heeeeeere's ", data.items.length, " items!");
