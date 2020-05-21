@@ -19,7 +19,15 @@ const ALL_ITEMS_QUERY = gql`
 
 const Center = styled.div`
     text-align: center;
-`
+`///////////
+
+const ItemsList = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 60px;
+    max-width: ${props => props.theme.maxWidth};
+    margin: 0 auto;
+`///////////
  
 class Items extends Component {
     render() {
@@ -32,7 +40,9 @@ class Items extends Component {
                         console.log({data});
                         if (loading) return <p>loading...</p>
                         if (error) return <p>Error: {error.message}</p>
-                        return <p>Heeeeeere's {data.items.length} items!</p>
+                        return <ItemsList>
+                                {data.items.map(item => <p>{item.title}</p>)}
+                            </ItemsList>
                     }}
                 </Query>
             </Center>
