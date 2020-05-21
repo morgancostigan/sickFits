@@ -1,9 +1,11 @@
 //  import React from 'react'; //not needed with next.js
+
+import Items from '../components/Items';
 import Link from 'next/link';
 
  const Home = props => (
      <div>
-         <p>Kia Ora!</p> 
+         <Items/> 
      </div>
  )
 
