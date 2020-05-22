@@ -3,6 +3,7 @@ import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import Form from './styles/Form';
 import formatMoney from '../lib/formatMoney';
+import Error from './ErrorMessage';
 
 const CREATE_ITEM_MUTATION = gql`
     mutation CREATE_ITEM_MUTATION(
@@ -30,7 +31,7 @@ class CreateItem extends Component {
         decription: '',
         image: '',
         largeImage: '',
-        price: null
+        price: 0
     };
 
     handleChange = (e) => {
@@ -43,7 +44,7 @@ class CreateItem extends Component {
 
     render() {
         return (
-            <Mutation query={CREATE_ITEM_MUTATION} variables={this.state}>
+            <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
                 {(createItem, { loading, error }) => (
 
                     <Form onSubmit={(e) => {
@@ -51,7 +52,8 @@ class CreateItem extends Component {
                         console.log(this.state);
 
                     }}>
-                        <fieldset>
+                        <Error error={error}/>
+                        <fieldset disabled={loading} aria-busy={loading}>
                             <label htmlFor="title">
                                 Title
                         <input
