@@ -7,9 +7,10 @@ import formatMoney from '../lib/formatMoney';
 class CreateItem extends Component {
     render() {
         return (
-            <div>
+            <Form>
+                <h2>Sell a thing!</h2>
                 
-            </div>
+            </Form>
         )
     }
 }
