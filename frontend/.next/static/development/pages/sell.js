@@ -18,9 +18,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _styles_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/Form */ "./components/styles/Form.js");
-/* harmony import */ var _lib_formatMoney__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../lib/formatMoney */ "./lib/formatMoney.js");
-/* harmony import */ var _ErrorMessage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ErrorMessage */ "./components/ErrorMessage.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "./node_modules/next/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _styles_Form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/Form */ "./components/styles/Form.js");
+/* harmony import */ var _lib_formatMoney__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../lib/formatMoney */ "./lib/formatMoney.js");
+/* harmony import */ var _ErrorMessage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ErrorMessage */ "./components/ErrorMessage.js");
 
 var _jsxFileName = "/Users/macbookpro/Documents/Tier-4/Advanced-React-master/sick-fits/frontend/components/CreateItem.js";
 
@@ -59,6 +61,7 @@ function _templateObject() {
 }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 
 
 
@@ -122,13 +125,13 @@ function (_Component) {
         variables: this.state,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 49
         },
         __self: this
       }, function (createItem, _ref) {
         var loading = _ref.loading,
             error = _ref.error;
-        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_5__["default"], {
           onSubmit:
           /*#__PURE__*/
           function () {
@@ -140,15 +143,24 @@ function (_Component) {
                 while (1) {
                   switch (_context.prev = _context.next) {
                     case 0:
-                      e.preventDefault();
+                      //vvv stop form from submitting vvv
+                      e.preventDefault(); //vvv call the mutation vvv
+
                       _context.next = 3;
                       return createItem();
 
                     case 3:
                       res = _context.sent;
+                      //vvv move user to single item page for item they just submitted vvv
                       console.log(res);
+                      next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push({
+                        pathname: '/item',
+                        query: {
+                          id: res.data.createItem.id
+                        }
+                      });
 
-                    case 5:
+                    case 6:
                     case "end":
                       return _context.stop();
                   }
@@ -162,14 +174,14 @@ function (_Component) {
           }(),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 52
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_7__["default"], {
           error: error,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 55
+            lineNumber: 64
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("fieldset", {
@@ -177,14 +189,14 @@ function (_Component) {
           "aria-busy": loading,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
+            lineNumber: 65
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "title",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 57
+            lineNumber: 66
           },
           __self: this
         }, "Title", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -197,14 +209,14 @@ function (_Component) {
           onChange: _this2.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59
+            lineNumber: 68
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "price",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 69
+            lineNumber: 78
           },
           __self: this
         }, "Price", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -217,14 +229,14 @@ function (_Component) {
           onChange: _this2.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 71
+            lineNumber: 80
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "description",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 81
+            lineNumber: 90
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
@@ -237,14 +249,14 @@ function (_Component) {
           onChange: _this2.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 82
+            lineNumber: 91
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           type: "submit",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 92
+            lineNumber: 101
           },
           __self: this
         }, "Submit It!")));
@@ -18709,6 +18721,18 @@ function getURL() {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! ./dist/lib/link */ "./node_modules/next/dist/lib/link.js")
+
+
+/***/ }),
+
+/***/ "./node_modules/next/router.js":
+/*!*************************************!*\
+  !*** ./node_modules/next/router.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./dist/lib/router */ "./node_modules/next/dist/lib/router/index.js")
 
 
 /***/ }),

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
+import Router from 'next/router';
 import Form from './styles/Form';
 import formatMoney from '../lib/formatMoney';
 import Error from './ErrorMessage';
+
 
 const CREATE_ITEM_MUTATION = gql`
     mutation CREATE_ITEM_MUTATION(
@@ -48,9 +50,16 @@ class CreateItem extends Component {
                 {(createItem, { loading, error }) => (
 
                     <Form onSubmit={async e => {
+                        //vvv stop form from submitting vvv
                         e.preventDefault();
+                        //vvv call the mutation vvv
                         const res = await createItem();
+                        //vvv move user to single item page for item they just submitted vvv
                         console.log(res);
+                        Router.push({
+                            pathname: '/item',
+                            query: {id: res.data.createItem.id }
+                        })
                     }}>
                         <Error error={error}/>
                         <fieldset disabled={loading} aria-busy={loading}>
