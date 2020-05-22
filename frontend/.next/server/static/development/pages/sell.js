@@ -103,18 +103,25 @@ module.exports =
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_ITEM_MUTATION", function() { return CREATE_ITEM_MUTATION; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-apollo */ "react-apollo");
-/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! graphql-tag */ "graphql-tag");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _styles_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/Form */ "./components/styles/Form.js");
-/* harmony import */ var _lib_formatMoney__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lib/formatMoney */ "./lib/formatMoney.js");
-/* harmony import */ var _ErrorMessage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ErrorMessage */ "./components/ErrorMessage.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "@babel/runtime/regenerator");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-apollo */ "react-apollo");
+/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! graphql-tag */ "graphql-tag");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _styles_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/Form */ "./components/styles/Form.js");
+/* harmony import */ var _lib_formatMoney__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../lib/formatMoney */ "./lib/formatMoney.js");
+/* harmony import */ var _ErrorMessage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ErrorMessage */ "./components/ErrorMessage.js");
+
 var _jsxFileName = "/Users/macbookpro/Documents/Tier-4/Advanced-React-master/sick-fits/frontend/components/CreateItem.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -152,7 +159,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var CREATE_ITEM_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject()); // end const CREATE_ITEM_MUTATION
+var CREATE_ITEM_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject()); // end const CREATE_ITEM_MUTATION
 
 var CreateItem =
 /*#__PURE__*/
@@ -203,7 +210,7 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Mutation"], {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_2__["Mutation"], {
         mutation: CREATE_ITEM_MUTATION,
         variables: this.state,
         __source: {
@@ -214,24 +221,51 @@ function (_Component) {
       }, function (createItem, _ref) {
         var loading = _ref.loading,
             error = _ref.error;
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          onSubmit: function onSubmit(e) {
-            e.preventDefault();
-            console.log(_this2.state);
-          },
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          onSubmit:
+          /*#__PURE__*/
+          function () {
+            var _ref2 = _asyncToGenerator(
+            /*#__PURE__*/
+            _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(e) {
+              var res;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+                while (1) {
+                  switch (_context.prev = _context.next) {
+                    case 0:
+                      e.preventDefault();
+                      _context.next = 3;
+                      return createItem();
+
+                    case 3:
+                      res = _context.sent;
+                      console.log(res);
+
+                    case 5:
+                    case "end":
+                      return _context.stop();
+                  }
+                }
+              }, _callee, this);
+            }));
+
+            return function (_x) {
+              return _ref2.apply(this, arguments);
+            };
+          }(),
           __source: {
             fileName: _jsxFileName,
             lineNumber: 50
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_6__["default"], {
           error: error,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 55
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("fieldset", {
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("fieldset", {
           disabled: loading,
           "aria-busy": loading,
           __source: {
@@ -239,14 +273,14 @@ function (_Component) {
             lineNumber: 56
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "title",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 57
           },
           __self: this
-        }, "Title", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        }, "Title", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
           type: "text",
           id: "title",
           name: "title",
@@ -259,14 +293,14 @@ function (_Component) {
             lineNumber: 59
           },
           __self: this
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "price",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 69
           },
           __self: this
-        }, "Price", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        }, "Price", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
           type: "number",
           id: "price",
           name: "price",
@@ -279,27 +313,27 @@ function (_Component) {
             lineNumber: 71
           },
           __self: this
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-          htmlFor: "decription",
+        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+          htmlFor: "description",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 81
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
           type: "text",
-          id: "decription",
-          name: "decription",
+          id: "description",
+          name: "description",
           placeholder: "Tell us about this thing.",
           required: true,
-          value: _this2.state.decription,
+          value: _this2.state.description,
           onChange: _this2.handleChange,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 82
           },
           __self: this
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           type: "submit",
           __source: {
             fileName: _jsxFileName,
@@ -312,7 +346,7 @@ function (_Component) {
   }]);
 
   return CreateItem;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]); // end class CreateItem extends Component
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]); // end class CreateItem extends Component
 
 
 /* harmony default export */ __webpack_exports__["default"] = (CreateItem);
@@ -500,6 +534,17 @@ var Sell = function Sell(props) {
 
 module.exports = __webpack_require__(/*! ./pages/sell.js */"./pages/sell.js");
 
+
+/***/ }),
+
+/***/ "@babel/runtime/regenerator":
+/*!*********************************************!*\
+  !*** external "@babel/runtime/regenerator" ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@babel/runtime/regenerator");
 
 /***/ }),
 

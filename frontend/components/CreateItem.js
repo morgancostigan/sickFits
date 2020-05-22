@@ -47,10 +47,10 @@ class CreateItem extends Component {
             <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
                 {(createItem, { loading, error }) => (
 
-                    <Form onSubmit={(e) => {
+                    <Form onSubmit={async e => {
                         e.preventDefault();
-                        console.log(this.state);
-
+                        const res = await createItem();
+                        console.log(res);
                     }}>
                         <Error error={error}/>
                         <fieldset disabled={loading} aria-busy={loading}>
@@ -78,14 +78,14 @@ class CreateItem extends Component {
                                     onChange={this.handleChange}
                                 />
                             </label>
-                            <label htmlFor="decription">
+                            <label htmlFor="description">
                                 <textarea
                                     type="text"
-                                    id="decription"
-                                    name="decription"
+                                    id="description"
+                                    name="description"
                                     placeholder="Tell us about this thing."
                                     required
-                                    value={this.state.decription}
+                                    value={this.state.description}
                                     onChange={this.handleChange}
                                 />
                             </label>
