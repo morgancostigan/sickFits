@@ -23,7 +23,11 @@ class CreateItem extends Component {
 
     render() {
         return (
-            <Form>
+            <Form onSubmit={(e) => {
+                e.preventDefault();
+                console.log(this.state);
+                
+            }}>
                 <fieldset>
                     <label htmlFor="title">
                         Title
@@ -50,7 +54,7 @@ class CreateItem extends Component {
                         />
                     </label>
                     <label htmlFor="decription">
-                        <input 
+                        <textarea 
                         type="text" 
                         id="decription" 
                         name="decription" 
@@ -60,6 +64,7 @@ class CreateItem extends Component {
                         onChange={this.handleChange}
                         />
                     </label>
+                    <button type="submit">Submit It!</button>
                 </fieldset>
             </Form>
         )

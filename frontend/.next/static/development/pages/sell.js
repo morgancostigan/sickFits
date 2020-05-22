@@ -92,7 +92,13 @@ function (_Component) {
   _createClass(CreateItem, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        onSubmit: function onSubmit(e) {
+          e.preventDefault();
+          console.log(_this2.state);
+        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 26
@@ -101,14 +107,14 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("fieldset", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 31
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 32
         },
         __self: this
       }, "Title", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -121,14 +127,14 @@ function (_Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 34
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "price",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 44
         },
         __self: this
       }, "Price", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -141,17 +147,17 @@ function (_Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 46
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "decription",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 56
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         type: "text",
         id: "decription",
         name: "decription",
@@ -161,10 +167,17 @@ function (_Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 57
         },
         __self: this
-      }))));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "submit",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        },
+        __self: this
+      }, "Submit It!")));
     }
   }]);
 
