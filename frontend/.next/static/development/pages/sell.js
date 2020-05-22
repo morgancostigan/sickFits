@@ -68,7 +68,22 @@ function (_Component) {
       decription: '',
       image: '',
       largeImage: '',
-      price: 0
+      price: null
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleChange", function (e) {
+      var _e$target = e.target,
+          name = _e$target.name,
+          type = _e$target.type,
+          value = _e$target.value;
+      var val = type === 'number' ? parseFloat(value) : value;
+      console.log({
+        name: name,
+        type: type,
+        value: value
+      });
+
+      _this.setState(_defineProperty({}, name, val));
     });
 
     return _this;
@@ -80,20 +95,20 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 26
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("fieldset", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 27
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 28
         },
         __self: this
       }, "Title", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -102,34 +117,38 @@ function (_Component) {
         name: "title",
         placeholder: "Title",
         required: true,
+        value: this.state.title,
+        onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 30
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "price",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 40
         },
         __self: this
       }, "Price", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
+        type: "number",
         id: "price",
         name: "price",
         placeholder: "Price",
         required: true,
+        value: this.state.price,
+        onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 42
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "decription",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 52
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -138,9 +157,11 @@ function (_Component) {
         name: "decription",
         placeholder: "Tell us about this thing.",
         required: true,
+        value: this.state.decription,
+        onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 53
         },
         __self: this
       }))));
