@@ -37,59 +37,64 @@ class CreateItem extends Component {
         const { name, type, value } = e.target;
         const val = type === 'number' ? parseFloat(value) : value;
         console.log({ name, type, value });
-        
-        this.setState({ [name]: val});
+
+        this.setState({ [name]: val });
     }
 
     render() {
         return (
-            <Form onSubmit={(e) => {
-                e.preventDefault();
-                console.log(this.state);
-                
-            }}>
-                <fieldset>
-                    <label htmlFor="title">
-                        Title
-                        <input 
-                        type="text" 
-                        id="title" 
-                        name="title" 
-                        placeholder="Title" 
-                        required
-                        value={this.state.title}
-                        onChange={this.handleChange}
-                        />
-                    </label>
-                    <label htmlFor="price">
-                        Price
-                        <input 
-                        type="number" 
-                        id="price" 
-                        name="price" 
-                        placeholder="Price" 
-                        required 
-                        value={this.state.price}
-                        onChange={this.handleChange}
-                        />
-                    </label>
-                    <label htmlFor="decription">
-                        <textarea 
-                        type="text" 
-                        id="decription" 
-                        name="decription" 
-                        placeholder="Tell us about this thing." 
-                        required 
-                        value={this.state.decription}
-                        onChange={this.handleChange}
-                        />
-                    </label>
-                    <button type="submit">Submit It!</button>
-                </fieldset>
-            </Form>
-        )
+            <Mutation query={CREATE_ITEM_MUTATION} variables={this.state}>
+                {(createItem, { loading, error }) => (
+
+                    <Form onSubmit={(e) => {
+                        e.preventDefault();
+                        console.log(this.state);
+
+                    }}>
+                        <fieldset>
+                            <label htmlFor="title">
+                                Title
+                        <input
+                                    type="text"
+                                    id="title"
+                                    name="title"
+                                    placeholder="Title"
+                                    required
+                                    value={this.state.title}
+                                    onChange={this.handleChange}
+                                />
+                            </label>
+                            <label htmlFor="price">
+                                Price
+                        <input
+                                    type="number"
+                                    id="price"
+                                    name="price"
+                                    placeholder="Price"
+                                    required
+                                    value={this.state.price}
+                                    onChange={this.handleChange}
+                                />
+                            </label>
+                            <label htmlFor="decription">
+                                <textarea
+                                    type="text"
+                                    id="decription"
+                                    name="decription"
+                                    placeholder="Tell us about this thing."
+                                    required
+                                    value={this.state.decription}
+                                    onChange={this.handleChange}
+                                />
+                            </label>
+                            <button type="submit">Submit It!</button>
+                        </fieldset>
+                    </Form>
+                )}
+            </Mutation>
+        )// end return
     }
-}
+}// end class CreateItem extends Component
 
 export default CreateItem;
 export { CREATE_ITEM_MUTATION }; 
