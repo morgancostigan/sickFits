@@ -114,6 +114,10 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "uploadFile", function (e) {
       console.log("uploadin'...");
+      var files = e.target.files;
+      var data = new FormData();
+      data.append('file', files[0]);
+      data.append('upload-preset', 'sickfits');
     });
 
     return _this;
@@ -129,7 +133,7 @@ function (_Component) {
         variables: this.state,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 57
         },
         __self: this
       }, function (createItem, _ref) {
@@ -178,14 +182,14 @@ function (_Component) {
           }(),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 57
+            lineNumber: 60
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_7__["default"], {
           error: error,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 69
+            lineNumber: 72
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("fieldset", {
@@ -193,14 +197,14 @@ function (_Component) {
           "aria-busy": loading,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 70
+            lineNumber: 73
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "file",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 71
+            lineNumber: 74
           },
           __self: this
         }, "Image", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -213,14 +217,14 @@ function (_Component) {
           onChange: _this2.uploadFile,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 73
+            lineNumber: 76
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "title",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 83
+            lineNumber: 86
           },
           __self: this
         }, "Title", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -233,14 +237,14 @@ function (_Component) {
           onChange: _this2.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 85
+            lineNumber: 88
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "price",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 95
+            lineNumber: 98
           },
           __self: this
         }, "Price", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -253,14 +257,14 @@ function (_Component) {
           onChange: _this2.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 97
+            lineNumber: 100
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "description",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 107
+            lineNumber: 110
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
@@ -273,14 +277,14 @@ function (_Component) {
           onChange: _this2.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 108
+            lineNumber: 111
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           type: "submit",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 118
+            lineNumber: 121
           },
           __self: this
         }, "Submit It!")));
