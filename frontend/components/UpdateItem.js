@@ -110,7 +110,7 @@ class UpdateItem extends Component {
                                                 onChange={this.handleChange}
                                             />
                                         </label>
-                                        <button type="submit">Submit It!</button>
+                                        <button type="submit">Change It!</button>
                                     </fieldset>
                                 </Form>
                             )}

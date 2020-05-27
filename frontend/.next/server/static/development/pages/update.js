@@ -466,7 +466,7 @@ function (_Component) {
               lineNumber: 113
             },
             __self: this
-          }, "Submit It!")));
+          }, "Change It!")));
         }); //end Query return
       }); // end return
     } //end render
