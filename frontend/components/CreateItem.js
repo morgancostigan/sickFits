@@ -96,6 +96,7 @@ class CreateItem extends Component {
                                     // value={this.state.image}
                                     onChange={this.uploadFile}
                                 />
+                                {this.state.largeImage && <img width="200" src={this.state.largeImage} alt="Upload Preview" />}
                             </label>
                             <label htmlFor="title">
                                 Title
@@ -108,7 +109,6 @@ class CreateItem extends Component {
                                     value={this.state.title}
                                     onChange={this.handleChange}
                                 />
-                                {this.state.largeImage && <img width="200" src={this.state.largeImage} alt="Upload Preview"/>}
                             </label>
                             <label htmlFor="price">
                                 Price

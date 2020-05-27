@@ -66,18 +66,7 @@ class UpdateItem extends Component {
                     }}>
                         <Error error={error}/>
                         <fieldset disabled={loading} aria-busy={loading}>
-                            <label htmlFor="file">
-                                Image
-                                <input
-                                    type="file"
-                                    id="file"
-                                    name="file"
-                                    placeholder="Upload an image"
-                                    required
-                                    // value={this.state.image}
-                                    onChange={this.uploadFile}
-                                />
-                            </label>
+                            
                             <label htmlFor="title">
                                 Title
                                 <input
@@ -89,7 +78,6 @@ class UpdateItem extends Component {
                                     value={this.state.title}
                                     onChange={this.handleChange}
                                 />
-                                {this.state.largeImage && <img width="200" src={this.state.largeImage} alt="Upload Preview"/>}
                             </label>
                             <label htmlFor="price">
                                 Price
