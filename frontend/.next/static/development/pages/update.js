@@ -138,7 +138,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    mutation UPDATE_ITEM_MUTATION(\n        $id: ID!\n        $title: String\n        $description: String\n        $price: Int\n    ){\n        updateItem (\n            title: $title\n            description: $description\n            price: $price\n        ) {\n            id\n            title\n            description\n            price\n        }\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    mutation UPDATE_ITEM_MUTATION(\n        $id: ID!\n        $title: String\n        $description: String\n        $price: Int\n    ){\n        updateItem (\n            id: $id\n            title: $title\n            description: $description\n            price: $price\n        ) {\n            id\n            title\n            description\n            price\n        }\n    }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -253,7 +253,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 66
         },
         __self: this
       }, function (_ref2) {
@@ -262,14 +262,14 @@ function (_Component) {
         if (loading) return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 68
           },
           __self: this
         }, "Loading...");
         if (!data.item) return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 68
+            lineNumber: 69
           },
           __self: this
         }, "No Item Found for ID ", _this2.props.id);
@@ -278,7 +278,7 @@ function (_Component) {
           variables: _this2.state,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 70
+            lineNumber: 71
           },
           __self: this
         }, function (updateItem, _ref3) {
@@ -290,14 +290,14 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 73
+              lineNumber: 74
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_7__["default"], {
             error: error,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 74
+              lineNumber: 75
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("fieldset", {
@@ -305,14 +305,14 @@ function (_Component) {
             "aria-busy": loading,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 75
+              lineNumber: 76
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
             htmlFor: "title",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 77
+              lineNumber: 78
             },
             __self: this
           }, "Title", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -325,14 +325,14 @@ function (_Component) {
             onChange: _this2.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 79
+              lineNumber: 80
             },
             __self: this
           })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
             htmlFor: "price",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 89
+              lineNumber: 90
             },
             __self: this
           }, "Price", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -345,14 +345,14 @@ function (_Component) {
             onChange: _this2.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 91
+              lineNumber: 92
             },
             __self: this
           })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
             htmlFor: "description",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 101
+              lineNumber: 102
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
@@ -365,17 +365,17 @@ function (_Component) {
             onChange: _this2.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 102
+              lineNumber: 103
             },
             __self: this
           })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
             type: "submit",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 112
+              lineNumber: 113
             },
             __self: this
-          }, "Change It!")));
+          }, "Chang", loading ? 'ing' : 'e', " It!")));
         }); //end Query return
       }); // end return
     } //end render

@@ -25,6 +25,7 @@ const UPDATE_ITEM_MUTATION = gql`
         $price: Int
     ){
         updateItem (
+            id: $id
             title: $title
             description: $description
             price: $price
@@ -109,7 +110,7 @@ class UpdateItem extends Component {
                                                 onChange={this.handleChange}
                                             />
                                         </label>
-                                        <button type="submit">Change It!</button>
+                                        <button type="submit">Chang{loading ? 'ing' : 'e'} It!</button>
                                     </fieldset>
                                 </Form>
                             )}
