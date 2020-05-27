@@ -136,7 +136,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    mutation UPDATE_ITEM_MUTATION(\n        $title: String!\n        $description: String!\n        $price: Int!\n        $image: String\n        $largeImage: String\n    ){\n        createItem (\n            title: $title\n            description: $description\n            price: $price\n            image: $image\n            largeImage: $largeImage\n        ) {\n            id\n        }\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    mutation UPDATE_ITEM_MUTATION(\n        $title: String!\n        $description: String!\n        $price: Int!\n    ){\n        createItem (\n            title: $title\n            description: $description\n            price: $price\n        ) {\n            id\n        }\n    }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -217,7 +217,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 50
         },
         __self: this
       }, function (_ref) {
@@ -226,7 +226,7 @@ function (_Component) {
         if (loading) return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
+            lineNumber: 52
           },
           __self: this
         }, "Loading...");
@@ -235,7 +235,7 @@ function (_Component) {
           variables: _this2.state,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 58
+            lineNumber: 54
           },
           __self: this
         }, function (createItem, _ref2) {
@@ -287,14 +287,14 @@ function (_Component) {
             }(),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 61
+              lineNumber: 57
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_7__["default"], {
             error: error,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 75
+              lineNumber: 71
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("fieldset", {
@@ -302,14 +302,14 @@ function (_Component) {
             "aria-busy": loading,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 76
+              lineNumber: 72
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
             htmlFor: "title",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 78
+              lineNumber: 74
             },
             __self: this
           }, "Title", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -322,14 +322,14 @@ function (_Component) {
             onChange: _this2.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 80
+              lineNumber: 76
             },
             __self: this
           })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
             htmlFor: "price",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 90
+              lineNumber: 86
             },
             __self: this
           }, "Price", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -342,14 +342,14 @@ function (_Component) {
             onChange: _this2.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 92
+              lineNumber: 88
             },
             __self: this
           })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
             htmlFor: "description",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 102
+              lineNumber: 98
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
@@ -362,14 +362,14 @@ function (_Component) {
             onChange: _this2.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 103
+              lineNumber: 99
             },
             __self: this
           })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
             type: "submit",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 113
+              lineNumber: 109
             },
             __self: this
           }, "Change It!")));
