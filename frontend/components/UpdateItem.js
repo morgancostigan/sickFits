@@ -23,7 +23,7 @@ const UPDATE_ITEM_MUTATION = gql`
         $description: String
         $price: Int
     ){
-        createItem (
+        updateItem (
             title: $title
             description: $description
             price: $price

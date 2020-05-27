@@ -232,7 +232,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    mutation UPDATE_ITEM_MUTATION(\n        $title: String\n        $description: String\n        $price: Int\n    ){\n        createItem (\n            title: $title\n            description: $description\n            price: $price\n        ) {\n            id\n            title\n            description\n            price\n        }\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    mutation UPDATE_ITEM_MUTATION(\n        $title: String\n        $description: String\n        $price: Int\n    ){\n        updateItem (\n            title: $title\n            description: $description\n            price: $price\n        ) {\n            id\n            title\n            description\n            price\n        }\n    }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
