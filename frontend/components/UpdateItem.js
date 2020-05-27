@@ -7,8 +7,8 @@ import formatMoney from '../lib/formatMoney';
 import Error from './ErrorMessage';
 
 
-const CREATE_ITEM_MUTATION = gql`
-    mutation CREATE_ITEM_MUTATION(
+const UPDATE_ITEM_MUTATION = gql`
+    mutation UPDATE_ITEM_MUTATION(
         $title: String!
         $description: String!
         $price: Int!
@@ -25,9 +25,9 @@ const CREATE_ITEM_MUTATION = gql`
             id
         }
     }
-`;// end const CREATE_ITEM_MUTATION
+`;// end const UPDATE_ITEM_MUTATION
 
-class CreateItem extends Component {
+class UpdateItem extends Component {
     state = {
         title: '',
         description: '',
@@ -44,29 +44,10 @@ class CreateItem extends Component {
         this.setState({ [name]: val });
     }
 
-    uploadFile = async e => {
-        console.log(`uploadin'...`);
-        const files = e.target.files;
-        const data = new FormData();
-        data.append('file', files[0]);
-        data.append('upload_preset', 'sickfits');
-
-        const res = await fetch('https://api.cloudinary.com/v1_1/dcrq0v21d/image/upload', {
-            method: 'POST',
-            body: data
-        });
-
-        const file = await res.json();
-        console.log({file});
-        this.setState({
-            image: file.secure_url,
-            largeImage: file.eager[0].secure_url,
-        });
-    }//end uploadFile
 
     render() {
         return (
-            <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
+            <Mutation mutation={UPDATE_ITEM_MUTATION} variables={this.state}>
                 {(createItem, { loading, error }) => (
 
                     <Form onSubmit={async e => {
@@ -140,7 +121,7 @@ class CreateItem extends Component {
             </Mutation>
         )// end return
     }
-}// end class CreateItem extends Component
+}// end class UpdateItem extends Component
 
-export default CreateItem;
-export { CREATE_ITEM_MUTATION }; 
+export default UpdateItem;
+export { UPDATE_ITEM_MUTATION }; 
