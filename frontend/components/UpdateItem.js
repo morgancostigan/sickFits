@@ -19,9 +19,9 @@ const SINGLE_ITEM_QUERY = gql`
 
 const UPDATE_ITEM_MUTATION = gql`
     mutation UPDATE_ITEM_MUTATION(
-        $title: String!
-        $description: String!
-        $price: Int!
+        $title: String
+        $description: String
+        $price: Int
     ){
         createItem (
             title: $title
@@ -29,6 +29,9 @@ const UPDATE_ITEM_MUTATION = gql`
             price: $price
         ) {
             id
+            title
+            description
+            price
         }
     }
 `;// end const UPDATE_ITEM_MUTATION
@@ -39,10 +42,21 @@ class UpdateItem extends Component {
     handleChange = (e) => {
         const { name, type, value } = e.target;
         const val = type === 'number' ? parseFloat(value) : value;
-        console.log({ name, type, value });
-
+        // console.log({ name, type, value });
         this.setState({ [name]: val });
-    }
+    };//end handleChange
+    updateItem = async (e, updateItemMutation) => {
+        e.preventDefault();
+        console.log('Updatin` Item!');
+        console.log(this.state);
+        const res = await updateItemMutation({
+            variables: {
+                id: this.props.id,
+                ...this.state,
+            }
+        });
+        console.log('Finished Updatin`!');
+    };//end updateItem
 
 
     render() {
@@ -50,24 +64,12 @@ class UpdateItem extends Component {
             <Query query={SINGLE_ITEM_QUERY} variables={{ id: this.props.id }}>
                 {({ data, loading }) => {
                     if(loading) return <p>Loading...</p>;
+                    if(!data.item) return <p>No Item Found for ID {this.props.id}</p>
                     return (
                         <Mutation mutation={UPDATE_ITEM_MUTATION} variables={this.state}>
-                            {(createItem, { loading, error }) => (
+                            {(updateItem, { loading, error }) => (
 
-                                <Form onSubmit={async e => {
-                                    //TODO - Wait for image upload before submission
-
-                                    //vvv stop form from submitting vvv
-                                    e.preventDefault();
-                                    //vvv call the mutation vvv
-                                    const res = await createItem();
-                                    //vvv move user to single item page for item they just submitted vvv
-                                    console.log({ res });
-                                    Router.push({
-                                        pathname: '/item',
-                                        query: { id: res.data.createItem.id },
-                                    })
-                                }}>
+                                <Form onSubmit={e => this.updateItem(e, updateItem)}>
                                     <Error error={error} />
                                     <fieldset disabled={loading} aria-busy={loading}>
 
