@@ -19,6 +19,7 @@ const SINGLE_ITEM_QUERY = gql`
 
 const UPDATE_ITEM_MUTATION = gql`
     mutation UPDATE_ITEM_MUTATION(
+        $id: ID!
         $title: String
         $description: String
         $price: Int
