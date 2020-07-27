@@ -159,6 +159,8 @@ function (_Component) {
   _createClass(DeleteItem, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
       return;
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Mutation"], {
         mutation: DELETE_ITEM_MUTATION,
@@ -172,13 +174,19 @@ function (_Component) {
         __self: this
       }, function (deleteItem, _ref) {
         var error = _ref.error;
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 18
-        },
-        __self: this
-      }, this.props.children), ";");
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            if (confirm('You sure about that?')) {
+              deleteItem();
+            }
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18
+          },
+          __self: this
+        }, _this.props.children);
+      });
     }
   }]);
 
