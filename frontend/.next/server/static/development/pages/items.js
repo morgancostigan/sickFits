@@ -161,8 +161,7 @@ function (_Component) {
     value: function render() {
       var _this = this;
 
-      return;
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Mutation"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Mutation"], {
         mutation: DELETE_ITEM_MUTATION,
         variables: {
           id: this.props.id
