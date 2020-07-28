@@ -1,9 +1,11 @@
 //  import React from 'react'; //not needed with next.js
+import SingleItem from '../components/SingleItem';
 
 const Item = props => (
     <div>
-        <p>Just this one thing!</p>
+        {/* <p>Just this one thing!</p> */}
+        <SingleItem />
     </div>
-)
+);
 
 export default Item;
