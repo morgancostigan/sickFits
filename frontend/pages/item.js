@@ -4,7 +4,7 @@ import SingleItem from '../components/SingleItem';
 const Item = props => (
     <div>
         {/* <p>Just this one thing!</p> */}
-        <SingleItem />
+        <SingleItem id={props.query.id} />
     </div>
 );
 
