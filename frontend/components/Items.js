@@ -34,7 +34,7 @@ class Items extends Component {
     render() {
         return (
             <Center>
-                <Pagination/>
+                <Pagination page={this.props.page}/>
                 {/* vvv the only allowed child of a query is a function vvv */}
                 <Query query={ALL_ITEMS_QUERY}> 
                     {({ data, error, loading }) => {
@@ -46,7 +46,7 @@ class Items extends Component {
                             </ItemsList>
                     }}
                 </Query>
-                <Pagination />
+                <Pagination page={this.props.page}/>
             </Center>
         )
     }

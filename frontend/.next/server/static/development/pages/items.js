@@ -493,6 +493,7 @@ function (_Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Pagination__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        page: this.props.page,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 37
@@ -544,6 +545,7 @@ function (_Component) {
           });
         }));
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Pagination__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        page: this.props.page,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 49
@@ -632,7 +634,7 @@ var Pagination = function Pagination(props) {
         lineNumber: 25
       },
       __self: this
-    }, "Page 1 of ", pages);
+    }, "Page ", props.page, " of ", pages);
   }));
 };
 
@@ -804,6 +806,7 @@ var Home = function Home(props) {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Items__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    page: parseFloat(props.query.page) || 1,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
