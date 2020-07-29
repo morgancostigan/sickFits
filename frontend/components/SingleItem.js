@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import Error from './ErrorMessage';
 import styled from 'styled-components';
+import Head from 'next/head';
 
 const SingleItemStyles = styled.div`
     max-width: 1200px;
@@ -38,6 +39,9 @@ class SingleItem extends Component {
                     // console.log(data);
                     const item = data.item;
                     return <SingleItemStyles>
+                        <Head>
+                            <title>SF! | {item.title} </title>
+                        </Head>
                         <img src={data.item.largeImage} alt={item.title}/>
                     </SingleItemStyles>;
                 }}

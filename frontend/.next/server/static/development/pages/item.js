@@ -197,6 +197,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ErrorMessage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ErrorMessage */ "./components/ErrorMessage.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/Users/macbookpro/Documents/Tier-4/Advanced-React-master/sick-fits/frontend/components/SingleItem.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -234,6 +236,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var SingleItemStyles = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div.withConfig({
   displayName: "SingleItem__SingleItemStyles",
   componentId: "mflgtv-0"
@@ -265,7 +268,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 32
         },
         __self: this
       }, function (_ref) {
@@ -276,21 +279,21 @@ function (_Component) {
           error: error,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 36
           },
           __self: this
         });
         if (loading) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 37
           },
           __self: this
         }, "Loading...");
         if (!data.item) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 38
           },
           __self: this
         }, "Nothing found for ", _this.props.id); // console.log(data);
@@ -299,15 +302,27 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SingleItemStyles, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 41
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_5___default.a, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 42
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43
+          },
+          __self: this
+        }, "SF! | ", item.title, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: data.item.largeImage,
           alt: item.title,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 45
           },
           __self: this
         }));
@@ -380,6 +395,17 @@ module.exports = __webpack_require__(/*! ./pages/item.js */"./pages/item.js");
 /***/ (function(module, exports) {
 
 module.exports = require("graphql-tag");
+
+/***/ }),
+
+/***/ "next/head":
+/*!****************************!*\
+  !*** external "next/head" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
 
 /***/ }),
 
