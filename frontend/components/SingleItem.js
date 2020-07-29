@@ -43,6 +43,10 @@ class SingleItem extends Component {
                             <title>SF! | {item.title} </title>
                         </Head>
                         <img src={data.item.largeImage} alt={item.title}/>
+                        <div className="details">
+                            <h2>Viewing {item.title}</h2>
+                            <p>{item.description}</p>
+                        </div>
                     </SingleItemStyles>;
                 }}
             </Query>
