@@ -200,13 +200,22 @@ function (_Component) {
           __self: this
         }, "Nothing found for ", _this.props.id); // console.log(data);
 
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        var item = data.item;
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SingleItemStyles, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 40
           },
           __self: this
-        }, "Single Item Component ", _this.props.id, " ");
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: data.item.largeImage,
+          alt: item.title,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41
+          },
+          __self: this
+        }));
       });
     }
   }]);
