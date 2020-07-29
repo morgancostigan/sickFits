@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import { perPage } from '../config';
 import Head from 'next/head'; 
+import Link from'next/link';  
 
 const PAGINATION_QUERY = gql`
  query PAGINATION_QUERY{
@@ -28,7 +29,19 @@ const Pagination = props => (
                     <Head>
                         <title>SF! Page {page} of {pages}</title>
                     </Head>
+                    <Link prefetch href={{
+                        pathname: 'items',
+                        query: {page: page - 1}
+                    }}>
+                        <a>← Prev</a>
+                    </Link>
                     <p>Page {props.page} of {pages}</p>
+                    <Link prefetch href={{
+                        pathname: 'items',
+                        query: { page: page + 1 }
+                    }}>
+                        <a>Next →</a>
+                    </Link>
                 </PaginationStyles>
             )
         }}
