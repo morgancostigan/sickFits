@@ -19,10 +19,12 @@ type Mutation {
     ): Item!
     deleteItem(
         id: ID!,
-    ): Item! 
+    ): Item!  
 }
 
 type Query {
-    items: [Item]! 
+    items(where: ItemByInput, orderBy: ItemOrderByInput, skip: Int, first: Int ): [Item]! 
     item(where: ItemWhereUniqueInput!): Item
+    itemsConnection(where: ItemWhereInput): ItemConnection!
+
 }
