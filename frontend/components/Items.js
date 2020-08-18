@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 import styled from 'styled-components';
 import Item from './Item';
 import Pagination from './Pagination';
-import perPage from '../config';
+import { perPage } from '../config';
   
 const ALL_ITEMS_QUERY = gql`
     query ALL_ITEMS_QUERY(
@@ -40,7 +40,12 @@ class Items extends Component {
             <Center>
                 <Pagination page={this.props.page}/>
                 {/* vvv the only allowed child of a query is a function vvv */}
-                <Query query={ALL_ITEMS_QUERY}> 
+                <Query 
+                    query={ALL_ITEMS_QUERY} 
+                    variables={{
+                        skip: 2,
+                        first: 4,
+                    }}> 
                     {({ data, error, loading }) => {
                         console.log({data});
                         if (loading) return <p>loading...</p>
