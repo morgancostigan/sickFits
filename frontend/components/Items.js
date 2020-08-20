@@ -43,8 +43,8 @@ class Items extends Component {
                 <Query 
                     query={ALL_ITEMS_QUERY} 
                     variables={{
-                        skip: 2,
-                        first: 4,
+                        skip: this.props.page * perPage - perPage, //these are the variables to determine how many items show up on the DOM 
+                        first: perPage,
                     }}> 
                     {({ data, error, loading }) => {
                         console.log({data});

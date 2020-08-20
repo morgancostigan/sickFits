@@ -41,7 +41,7 @@ const Pagination = props => (
                         pathname: 'items',
                         query: { page: page + 1 }
                     }}>
-                        <a className="prev" aria-disabled={page >= pages}>← Prev</a>
+                        <a className="prev" aria-disabled={page >= pages}>Next →</a>
                     </Link>
                 </PaginationStyles>
             )
