@@ -3,6 +3,8 @@
 # vvvvv ALLOWS US TO USE DATATYPES FROM PRISMA WITHOUT REWRITING THEM HERE vvvvv
 # import * from './generated/prisma.graphql'
 
+# anything added here also needs a resolver elsewhere
+
 type Mutation {
     createItem(
         title: String,
