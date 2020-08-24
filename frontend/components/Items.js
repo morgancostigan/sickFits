@@ -42,9 +42,10 @@ class Items extends Component {
                 {/* vvv the only allowed child of a query is a function vvv */}
                 <Query 
                     query={ALL_ITEMS_QUERY} 
+                    // fetchPolicy="network-only" //gets data from server every time we change page, negating benefits of cache 
                     variables={{
                         skip: this.props.page * perPage - perPage, //these are the variables to determine how many items show up on the DOM 
-                        first: perPage,
+                        // first: perPage, //not needed as it's implied above
                     }}> 
                     {({ data, error, loading }) => {
                         console.log({data});

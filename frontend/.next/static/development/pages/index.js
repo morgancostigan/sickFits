@@ -408,11 +408,12 @@ function (_Component) {
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Query"], {
-        query: ALL_ITEMS_QUERY,
+        query: ALL_ITEMS_QUERY // fetchPolicy="network-only" //gets data from server every time we change page, negating benefits of cache 
+        ,
         variables: {
-          skip: this.props.page * _config__WEBPACK_IMPORTED_MODULE_6__["perPage"] - _config__WEBPACK_IMPORTED_MODULE_6__["perPage"],
-          //these are the variables to determine how many items show up on the DOM 
-          first: _config__WEBPACK_IMPORTED_MODULE_6__["perPage"]
+          skip: this.props.page * _config__WEBPACK_IMPORTED_MODULE_6__["perPage"] - _config__WEBPACK_IMPORTED_MODULE_6__["perPage"] //these are the variables to determine how many items show up on the DOM 
+          // first: perPage, //not needed as it's implied above
+
         },
         __source: {
           fileName: _jsxFileName,
@@ -429,21 +430,21 @@ function (_Component) {
         if (loading) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 52
           },
           __self: this
         }, "loading...");
         if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 53
           },
           __self: this
         }, "Error: ", error.message);
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ItemsList, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 53
+            lineNumber: 54
           },
           __self: this
         }, data.items.map(function (item) {
@@ -452,7 +453,7 @@ function (_Component) {
             key: item.id,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 54
+              lineNumber: 55
             },
             __self: this
           });
@@ -461,7 +462,7 @@ function (_Component) {
         page: this.props.page,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 59
         },
         __self: this
       }));
