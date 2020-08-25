@@ -9,7 +9,7 @@ class Signup extends Component {
         return (
             <Form>
                 <fieldset>
-                    <h2>Sign up here to get started. </h2>
+                    <h2>Sign up here. </h2>
                 </fieldset>
                 
             </Form>
