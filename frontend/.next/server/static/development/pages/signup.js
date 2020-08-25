@@ -218,11 +218,24 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    mutation SIGNUP_MUTATION(\n        $email: String!,\n        $name: String!,\n        $password: String!\n    ) {\n        signup (\n            email: $email,\n            name: $name,\n            password: $password\n        ) {\n            id\n            email \n            name\n        }\n    }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
 
 
+
+var SIGNUP_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject());
 
 var Signup =
 /*#__PURE__*/
@@ -258,86 +271,114 @@ function (_Component) {
   _createClass(Signup, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      var _this2 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Mutation"], {
+        mutation: SIGNUP_MUTATION,
+        variables: this.state,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 37
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("fieldset", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 20
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 21
-        },
-        __self: this
-      }, "Sign up here. "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "email",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 22
-        },
-        __self: this
-      }, "Email", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "email",
-        name: "email",
-        placeholder: "email",
-        value: this.state.email,
-        onChange: this.saveToState,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 24
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "name",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }, "Name", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        name: "name",
-        placeholder: "name",
-        value: this.state.name,
-        onChange: this.saveToState,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 34
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "password",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 42
-        },
-        __self: this
-      }, "Password", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "password",
-        name: "password",
-        placeholder: "password",
-        value: this.state.password,
-        onChange: this.saveToState,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 44
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "submit",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 52
-        },
-        __self: this
-      }, "Sign Up")));
+      }, function (signup, _ref) {
+        var error = _ref.error,
+            loading = _ref.loading;
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          method: "post",
+          onSubmit: function onSubmit(e) {
+            e.preventDefault();
+            signup();
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("fieldset", {
+          disabled: loading,
+          "aria-busy": loading,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 46
+          },
+          __self: this
+        }, "Sign up here. "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          error: error,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 47
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          htmlFor: "email",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48
+          },
+          __self: this
+        }, "Email", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "email",
+          name: "email",
+          placeholder: "email",
+          value: _this2.state.email,
+          onChange: _this2.saveToState,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 50
+          },
+          __self: this
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          htmlFor: "name",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 58
+          },
+          __self: this
+        }, "Name", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "text",
+          name: "name",
+          placeholder: "name",
+          value: _this2.state.name,
+          onChange: _this2.saveToState,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 60
+          },
+          __self: this
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          htmlFor: "password",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 68
+          },
+          __self: this
+        }, "Password", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "password",
+          name: "password",
+          placeholder: "password",
+          value: _this2.state.password,
+          onChange: _this2.saveToState,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 70
+          },
+          __self: this
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          type: "submit",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 78
+          },
+          __self: this
+        }, "Sign Up")));
+      });
     }
   }]);
 
