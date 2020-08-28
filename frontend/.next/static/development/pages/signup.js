@@ -342,6 +342,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _styles_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/Form */ "./components/styles/Form.js");
 /* harmony import */ var _ErrorMessage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ErrorMessage */ "./components/ErrorMessage.js");
+/* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./User */ "./components/User.js");
 
 var _jsxFileName = "/Users/macbookpro/Documents/Tier-4/Advanced-React-master/sick-fits/frontend/components/Signup.js";
 
@@ -380,6 +381,7 @@ function _templateObject() {
 }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 
 
 
@@ -427,9 +429,12 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_2__["Mutation"], {
         mutation: SIGNUP_MUTATION,
         variables: this.state,
+        refetchQueries: [{
+          query: _User__WEBPACK_IMPORTED_MODULE_6__["CURRENT_USER_QUERY"]
+        }],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 38
         },
         __self: this
       }, function (signup, _ref) {
@@ -476,7 +481,7 @@ function (_Component) {
           }(),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 45
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("fieldset", {
@@ -484,27 +489,27 @@ function (_Component) {
           "aria-busy": loading,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 47
+            lineNumber: 52
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 48
+            lineNumber: 53
           },
           __self: this
         }, "Sign up here. "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_5__["default"], {
           error: error,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 49
+            lineNumber: 54
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "email",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 55
           },
           __self: this
         }, "Email", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -515,14 +520,14 @@ function (_Component) {
           onChange: _this2.saveToState,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 57
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "name",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 60
+            lineNumber: 65
           },
           __self: this
         }, "Name", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -533,14 +538,14 @@ function (_Component) {
           onChange: _this2.saveToState,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 62
+            lineNumber: 67
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "password",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 70
+            lineNumber: 75
           },
           __self: this
         }, "Password", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -551,14 +556,14 @@ function (_Component) {
           onChange: _this2.saveToState,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 72
+            lineNumber: 77
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           type: "submit",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 80
+            lineNumber: 85
           },
           __self: this
         }, "Sign Up")));
