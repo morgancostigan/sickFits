@@ -18,6 +18,9 @@ type User {
   resetTokenExpiry: Float
   permissions: [Permission]
   @scalarList(strategy: RELATION)
+  createdAt: DateTime! @createdAt
+  # DateTime is not a graphQL datatype, but is in Prisma
+  updatedAt: DateTime! @updatedAt
 }
 
 type Item {
