@@ -59,6 +59,14 @@ const Mutations = {
         //return user to the browser
         return user;
     },
+    async signin (parent, {email, password}, ctx, info) { //destructured args into {email, password}
+        //1 is there a user with this email
+        //2 is their password correct
+        //3 generate JWT token
+        //4 set the cookie with the token
+        //5 return the user
+
+    },
 };
 
 module.exports = Mutations;
