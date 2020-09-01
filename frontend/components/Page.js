@@ -50,6 +50,10 @@ injectGlobal`
         line-height: 2;
         font-family: 'radnika_next' ;
     }
+    button {
+    font-family: 'radnika_next' !important;
+    color: ${theme.black};
+    }
     a {
         text-decoration: none;
         color: ${theme.black};  /* this is outside the ThemeProvider, hence no props  */
