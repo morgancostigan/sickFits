@@ -80,6 +80,11 @@ const Mutations = {
         //5 return the user
         return user;
     },
+    
+    signout(parent, args, ctx, info) {
+        ctx.response.clearCookie('token'); //this is available with cookie-parser
+        return {message: 'Adios!'};
+    }
 };
 
 module.exports = Mutations;
