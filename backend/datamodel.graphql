@@ -10,7 +10,7 @@ enum Permission {
 }
 
 type User {
-  id: ID! @id
+  id: ID! @unique @id
   name: String!
   email: String! @unique
   password: String!
