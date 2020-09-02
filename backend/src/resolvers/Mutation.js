@@ -1,5 +1,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const { randomBytes } = require('crypto'); //for generating random tokens
+const { promisify } = require('util'); //for changing callback function to a promise
 
 const Mutations = {
     async createItem(parent, args, ctx, info) {
@@ -80,11 +82,22 @@ const Mutations = {
         //5 return the user
         return user;
     },
-    
     signout(parent, args, ctx, info) {
         ctx.response.clearCookie('token'); //this is available with cookie-parser
         return {message: 'Adios!'};
-    }
+    },
+    async requestReset(parent, args, ctx, info) {
+        //1 check if real user
+        const user = await ctx.db.query.user({where: {email: args.email}});
+        if(!user){
+            throw new Error(`No user found for email ${args.email}`);
+        };
+        //2 set a reset token and expiry
+
+        //3 email the reset token to user
+        //4
+        //5
+    },
 };
 
 module.exports = Mutations;
