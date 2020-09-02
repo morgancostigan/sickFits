@@ -145,6 +145,7 @@ const Mutations = {
             maxAge: 1000 * 60 * 60 * 24 * 52, //sets cookie for one year
         });
         //8 return "new" user
+        return updatedUser;
     },
 };
 
