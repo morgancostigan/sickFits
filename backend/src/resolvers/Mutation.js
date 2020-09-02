@@ -119,8 +119,11 @@ const Mutations = {
             where: {
                 resetToken: args.resetToken,
                 resetTokenExpiry_gte: Date.now() - 3600000, //an hour ago
-            }
-        })
+            },
+        });
+        if(!user) {
+            throw new Error(`Token is invalid or expired.`);
+        };
         //4 hash new password
         //5 save new password to user and remove resetToken
         //6 generate JWT token
