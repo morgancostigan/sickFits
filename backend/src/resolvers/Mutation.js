@@ -110,8 +110,17 @@ const Mutations = {
     },
     async resetPassword(parent, args, ctx, info) {
         //1 check if passwords match
+        if(args.password !== args.confirmPassword) {
+            throw new Error(`Dude, these passwords don't match. The hell?`);
+        }
         //2 check if resetToken is valid
         //3 check if resetToken is expired
+        const [user] = ctx.db.query.users({ //we will query users (plural) because it gives a lot more sorting options than user
+            where: {
+                resetToken: args.resetToken,
+                resetTokenExpiry_gte: Date.now() - 3600000, //an hour ago
+            }
+        })
         //4 hash new password
         //5 save new password to user and remove resetToken
         //6 generate JWT token
