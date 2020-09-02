@@ -43,5 +43,16 @@ type Query {
     item(where: ItemWhereUniqueInput!): Item
     itemsConnection(where: ItemWhereInput): ItemConnection!
     me: User
+}
 
+# redefining User here to prevent things like password and reset tokens from being accessible on the front end
+type User {
+    id: ID!
+    email: String!
+    name: String!
+    # orders(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Order!]
+    # cart(where: CartItemWhereInput, orderBy: CartItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CartItem!]
+    # createdAt: DateTime!
+    # updatedAt: DateTime!
+    permissions: [Permission!]
 }
