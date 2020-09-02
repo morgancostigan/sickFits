@@ -125,6 +125,7 @@ const Mutations = {
             throw new Error(`Token is invalid or expired.`);
         };
         //4 hash new password
+        const password = await bcrypt.hash(args.password, 15); 
         //5 save new password to user and remove resetToken
         //6 generate JWT token
         //7 set the JWT token cookie
