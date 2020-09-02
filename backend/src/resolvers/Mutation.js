@@ -115,7 +115,7 @@ const Mutations = {
         }
         //2 check if resetToken is valid
         //3 check if resetToken is expired
-        const [user] = ctx.db.query.users({ //we will query users (plural) because it gives a lot more sorting options than user
+        const [user] = await ctx.db.query.users({ //we will query users (plural) because it gives a lot more sorting options than user
             where: {
                 resetToken: args.resetToken,
                 resetTokenExpiry_gte: Date.now() - 3600000, //an hour ago
@@ -134,7 +134,7 @@ const Mutations = {
             data: {
                 password,
                 resetToken: null,
-                resetTokenExpiry: null
+                resetTokenExpiry: null,
             },
         });
         //6 generate JWT token

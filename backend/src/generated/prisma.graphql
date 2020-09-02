@@ -1752,7 +1752,7 @@ input UserUpdateInput {
   password: String
   name: String
   resetToken: String
-  resetTokenExpiry: Float
+  resetTokenExpiry: String
   permissions: UserUpdatepermissionsInput
   orders: OrderUpdateManyWithoutUserInput
   cart: CartItemUpdateManyWithoutUserInput
