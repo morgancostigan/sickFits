@@ -9,12 +9,12 @@ const RESET_MUTATION = gql`
     mutation RESET_MUTATION( 
         $resetToken: String!, 
         $password: String!,
-        $comfirmPassword: String!
+        $confirmPassword: String!,
      ) {
         resetPassword ( 
             resetToken: $resetToken,
-            password: $password
-            confirmPassword:$confirmPassword
+            password: $password,
+            confirmPassword:$confirmPassword,
          ) {
             id
             email
@@ -25,7 +25,7 @@ const RESET_MUTATION = gql`
 
 class Reset extends Component {
     static propTypes = {
-        resetToken: PropTypes.string.isRequired
+        resetToken: PropTypes.string.isRequired,
     }
     state = {
         password: '',
@@ -42,7 +42,7 @@ class Reset extends Component {
                 variables={{
                     resetToken: this.props.resetToken,
                     password: this.state.password,
-                    confirmPassword: this.state.confirmPassword
+                    confirmPassword: this.state.confirmPassword,
                 }}
             >
                 {(reset, { error, loading, called }) => {
@@ -50,8 +50,7 @@ class Reset extends Component {
                         <Form method="post"
                             onSubmit={async e => {
                                 e.preventDefault();
-                                const res = await reset();
-                                console.log(res);
+                                await reset();
                                 this.setState({ password: '', confirmPassword: '' });
                             }}>
                             <fieldset disabled={loading} aria-busy={loading}>

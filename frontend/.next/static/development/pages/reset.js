@@ -134,7 +134,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    mutation RESET_MUTATION( \n        $resetToken: String!, \n        $password: String!,\n        $comfirmPassword: String!\n     ) {\n        resetPassword ( \n            resetToken: $resetToken,\n            password: $password\n            confirmPassword:$confirmPassword\n         ) {\n            id\n            email\n            name \n        }\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    mutation RESET_MUTATION( \n        $resetToken: String!, \n        $password: String!,\n        $confirmPassword: String!,\n     ) {\n        resetPassword ( \n            resetToken: $resetToken,\n            password: $password,\n            confirmPassword:$confirmPassword,\n         ) {\n            id\n            email\n            name \n        }\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -212,7 +212,6 @@ function (_Component) {
             var _ref2 = _asyncToGenerator(
             /*#__PURE__*/
             _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(e) {
-              var res;
               return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
                 while (1) {
                   switch (_context.prev = _context.next) {
@@ -222,15 +221,12 @@ function (_Component) {
                       return reset();
 
                     case 3:
-                      res = _context.sent;
-                      console.log(res);
-
                       _this2.setState({
                         password: '',
                         confirmPassword: ''
                       });
 
-                    case 6:
+                    case 4:
                     case "end":
                       return _context.stop();
                   }
@@ -252,27 +248,27 @@ function (_Component) {
           "aria-busy": loading,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 57
+            lineNumber: 56
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 58
+            lineNumber: 57
           },
           __self: this
         }, "Enter A New Password"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_5__["default"], {
           error: error,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59
+            lineNumber: 58
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "password",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 60
+            lineNumber: 59
           },
           __self: this
         }, "New Password", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -283,14 +279,14 @@ function (_Component) {
           onChange: _this2.saveToState,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 62
+            lineNumber: 61
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "confirmPassword",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 70
+            lineNumber: 69
           },
           __self: this
         }, "AGAIN!", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -301,14 +297,14 @@ function (_Component) {
           onChange: _this2.saveToState,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 72
+            lineNumber: 71
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           type: "submit",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 80
+            lineNumber: 79
           },
           __self: this
         }, "Reset that Malarkey")));
@@ -20558,7 +20554,7 @@ var _jsxFileName = "/Users/macbookpro/Documents/Tier-4/Advanced-React-master/sic
 
 
 
-var resetPage = function resetPage(props) {
+var ResetPage = function ResetPage(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
@@ -20571,7 +20567,7 @@ var resetPage = function resetPage(props) {
       lineNumber: 5
     },
     __self: this
-  }, "Reset Your Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Reset__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, "Reset Your Password ", props.query.resetToken), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Reset__WEBPACK_IMPORTED_MODULE_1__["default"], {
     resetToken: props.query.resetToken,
     __source: {
       fileName: _jsxFileName,
@@ -20581,7 +20577,7 @@ var resetPage = function resetPage(props) {
   }));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (resetPage);
+/* harmony default export */ __webpack_exports__["default"] = (ResetPage);
     (function (Component, route) {
       if(!Component) return
       if (false) {}
