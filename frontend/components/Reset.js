@@ -4,15 +4,25 @@ import gql from 'graphql-tag';
 import Form from './styles/Form';
 import Error from './ErrorMessage';
 
-const REQUEST_RESET_MUTATION = gql`
-    mutation REQUEST_RESET_MUTATION( $email: String! ) {
-        requestReset ( email: $email ) {
-            message 
+const RESET_MUTATION = gql`
+    mutation RESET_MUTATION( 
+        $resetToken: String!, 
+        $password: String!,
+        $comfirmPassword: String!
+     ) {
+        resetPassword ( 
+            resetToken: $resetToken,
+            password: $password
+            confirmPassword:$confirmPassword
+         ) {
+            id
+            email
+            name 
         }
     }
 `;
 
-class RequestReset extends Component {
+class Reset extends Component {
     state = {
         email: ''
     };
@@ -23,7 +33,7 @@ class RequestReset extends Component {
     render() {
         return (
             <Mutation
-                mutation={REQUEST_RESET_MUTATION}
+                mutation={RESET_MUTATION}
                 variables={this.state}
             >
                 {(reset, { error, loading, called }) => {
@@ -58,4 +68,4 @@ class RequestReset extends Component {
     }
 };
 
-export default RequestReset;
+export default Reset;
