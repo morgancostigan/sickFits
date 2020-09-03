@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import CreateItem from '../components/CreateItem';
+import Reset from '../components/Reset';
 
-const Reset = props => (
+const resetPage = props => (
     <div>
-        <p>Reset Your Password {props.query.resetToken}</p>
+        <p>Reset Your Password</p>
+        <Reset resetToken={props.query.resetToken}/>
     </div>
 )
 
-export default Reset;
+export default resetPage;

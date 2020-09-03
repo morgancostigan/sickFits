@@ -52,7 +52,7 @@ class Reset extends Component {
                                 e.preventDefault();
                                 const res = await reset();
                                 console.log(res);
-                                this.setState({ email: '' });
+                                this.setState({ password: '', confirmPassword: '' });
                             }}>
                             <fieldset disabled={loading} aria-busy={loading}>
                                 <h2>Enter A New Password</h2>
