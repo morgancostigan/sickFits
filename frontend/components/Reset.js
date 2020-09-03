@@ -55,20 +55,29 @@ class Reset extends Component {
                                 this.setState({ email: '' });
                             }}>
                             <fieldset disabled={loading} aria-busy={loading}>
-                                <h2>Reset Your Password</h2>
+                                <h2>Enter A New Password</h2>
                                 <Error error={error} />
-                                {!error && !loading && called && <p>Reset link sent to your email. Dig.</p>}
-                                <label htmlFor="email">
-                                    Email
+                                <label htmlFor="password">
+                                    New Password
                                 <input
-                                        type="email"
-                                        name="email"
-                                        placeholder="email"
-                                        value={this.state.email}
+                                        type="password"
+                                        name="password"
+                                        placeholder="password"
+                                        value={this.state.password}
                                         onChange={this.saveToState}
                                     />
                                 </label>
-                                <button type="submit">Request Reset</button>
+                                <label htmlFor="confirmPassword">
+                                    AGAIN!
+                                <input
+                                        type="confirmPassword"
+                                        name="confirmPassword"
+                                        placeholder="confirmPassword"
+                                        value={this.state.confirmPassword}
+                                        onChange={this.saveToState}
+                                    />
+                                </label>
+                                <button type="submit">Reset that Malarkey</button>
                             </fieldset>
                         </Form>)
                 }}
