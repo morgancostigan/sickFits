@@ -3,6 +3,7 @@ import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import Form from './styles/Form';
 import Error from './ErrorMessage';
+import PropTypes from 'prop-types';
 
 const RESET_MUTATION = gql`
     mutation RESET_MUTATION( 
@@ -23,8 +24,12 @@ const RESET_MUTATION = gql`
 `;
 
 class Reset extends Component {
+    static propTypes = {
+        resetToken: PropTypes.string.isRequired
+    }
     state = {
-        email: ''
+        password: '',
+        confirmPassword: ''
     };
     saveToState = (e) => {
         this.setState({ [e.target.name]: e.target.value });
@@ -34,7 +39,11 @@ class Reset extends Component {
         return (
             <Mutation
                 mutation={RESET_MUTATION}
-                variables={this.state}
+                variables={{
+                    resetToken: this.props.resetToken,
+                    password: this.state.password,
+                    confirmPassword: this.state.confirmPassword
+                }}
             >
                 {(reset, { error, loading, called }) => {
                     return (
