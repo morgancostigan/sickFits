@@ -294,7 +294,7 @@ function (_Component) {
           },
           __self: this
         }, "AGAIN!", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-          type: "confirmPassword",
+          type: "password",
           name: "confirmPassword",
           placeholder: "confirmPassword",
           value: _this2.state.confirmPassword,
