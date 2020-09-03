@@ -26,7 +26,7 @@ class RequestReset extends Component {
                 mutation={REQUEST_RESET_MUTATION} 
                 variables={this.state}
                 >
-                {(reset, { error, loading }) => {
+                {(reset, { error, loading, called }) => {
                     return (
                         <Form method="post"
                             onSubmit={async e => {
@@ -38,6 +38,7 @@ class RequestReset extends Component {
                             <fieldset disabled={loading} aria-busy={loading}>
                                 <h2>Reset Your Password</h2>
                                 <Error error={error} />
+                                {!error && !loading && called && <p>Reset link sent to your email. Dig.</p>}
                                 <label htmlFor="email">
                                     Email
                                 <input

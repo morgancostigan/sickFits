@@ -194,7 +194,8 @@ function (_Component) {
         __self: this
       }, function (reset, _ref) {
         var error = _ref.error,
-            loading = _ref.loading;
+            loading = _ref.loading,
+            called = _ref.called;
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_4__["default"], {
           method: "post",
           onSubmit:
@@ -258,11 +259,17 @@ function (_Component) {
             lineNumber: 40
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-          htmlFor: "email",
+        }), !error && !loading && called && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 41
+          },
+          __self: this
+        }, "Reset link sent to your email. Dig."), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+          htmlFor: "email",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 42
           },
           __self: this
         }, "Email", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -273,14 +280,14 @@ function (_Component) {
           onChange: _this2.saveToState,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 43
+            lineNumber: 44
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           type: "submit",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 52
           },
           __self: this
         }, "Request Reset")));
