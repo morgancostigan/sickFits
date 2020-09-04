@@ -103,6 +103,7 @@ const Mutations = {
                 resetTokenExpiry
             }
         });
+
         return { message: 'Thanking you!' };
         //3 email the reset token to user
 
@@ -121,7 +122,7 @@ const Mutations = {
             },
         });
         if(!user) {
-            throw new Error(`Token is invalid or expired.`);
+            throw new Error(`JRR Broken Token. Token is invalid or expired.`);
         };
         //4 hash new password
         const password = await bcrypt.hash(args.password, 15); 
