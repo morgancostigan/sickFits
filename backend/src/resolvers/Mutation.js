@@ -111,14 +111,10 @@ const Mutations = {
             subject: 'Your Password Reset Token',
             html: makeANiceEmail(`Your Password Reset Token is here! 
             \n\n 
-            <a href"${process.env.FRONTEND_URL}/reset?resetToken=${resetToken}">
+            <a href="${process.env.FRONTEND_URL}/reset?resetToken=${resetToken}">
             Click here to reset.
             </a>`),
         });
-
-
-
-
         //4 return the message
         return { message: 'Thanking you!' };
     },
