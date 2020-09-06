@@ -104,10 +104,23 @@ const Mutations = {
                 resetTokenExpiry
             }
         });
-
-        return { message: 'Thanking you!' };
         //3 email the reset token to user
+        const mailRes = await transport.sendMail({
+            from: 'me@there.com',
+            to: user.email,
+            subject: 'Your Password Reset Token',
+            html: makeANiceEmail(`Your Password Reset Token is here! 
+            \n\n 
+            <a href"${process.env.FRONTEND_URL}/reset?resetToken=${resetToken}">
+            Click here to reset.
+            </a>`),
+        });
 
+
+
+
+        //4 return the message
+        return { message: 'Thanking you!' };
     },
     async resetPassword(parent, args, ctx, info) {
         //1 check if passwords match
