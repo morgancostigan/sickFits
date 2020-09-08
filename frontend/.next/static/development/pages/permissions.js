@@ -324,64 +324,79 @@ function (_React$Component) {
       var _this2 = this;
 
       var user = this.props.user;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Mutation"], {
+        mutation: UPDATE_PERMISSIONS_MUTATION,
+        variables: {
+          permissions: this.state.permissions,
+          userId: this.props.user.id
+        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 99
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 100
-        },
-        __self: this
-      }, user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 101
-        },
-        __self: this
-      }, user.email), possiblePermissions.map(function (permission) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-          key: permission,
+      }, function (updatePermissions, _ref2) {
+        var loading = _ref2.loading,
+            error = _ref2.error;
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 103
+            lineNumber: 106
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-          htmlFor: "".concat(user.id, "-permission-").concat(permission),
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 104
+            lineNumber: 107
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          id: "".concat(user.id, "-permission-").concat(permission),
-          type: "checkbox",
-          checked: _this2.state.permissions.includes(permission),
-          value: permission,
-          onChange: _this2.handlePermissionChange,
+        }, user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 105
+            lineNumber: 108
           },
           __self: this
-        })));
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 113
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_SickButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 114
-        },
-        __self: this
-      }, "Update")));
+        }, user.email), possiblePermissions.map(function (permission) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+            key: permission,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 110
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+            htmlFor: "".concat(user.id, "-permission-").concat(permission),
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 111
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+            id: "".concat(user.id, "-permission-").concat(permission),
+            type: "checkbox",
+            checked: _this2.state.permissions.includes(permission),
+            value: permission,
+            onChange: _this2.handlePermissionChange,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 112
+            },
+            __self: this
+          })));
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 120
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_SickButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 121
+          },
+          __self: this
+        }, "Update")));
+      });
     }
   }]);
 
