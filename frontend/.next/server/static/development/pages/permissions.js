@@ -230,8 +230,18 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _templateObject() {
+function _templateObject2() {
   var data = _taggedTemplateLiteral(["\n    query {\n        users {\n            id\n            name\n            email\n            permissions\n        }\n    }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    mutation updatePermissions($permissions: [Permission], \n    $userId: ID!) {\n        updatePermissions(permissions: $permissions, userId: $userId) {\n            id\n            permissions\n            name\n            email\n        }\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -249,14 +259,15 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var possiblePermissions = ['USER', 'ADMIN', 'ITEMCREATE', 'ITEMUPDATE', 'ITEMDELETE', 'PERMISSIONUPDATE'];
-var ALL_USERS_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject());
+var UPDATE_PERMISSIONS_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject());
+var ALL_USERS_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject2());
 
 var Permissions = function Permissions(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Query"], {
     query: ALL_USERS_QUERY,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 41
     },
     __self: this
   }, function (_ref) {
@@ -266,56 +277,56 @@ var Permissions = function Permissions(props) {
     return console.log(data) || react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 44
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_2__["default"], {
       error: error,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 45
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 46
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 47
       },
       __self: this
     }, "Manage Permissions"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_Table__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 48
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 49
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 50
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 51
       },
       __self: this
     }, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 52
       },
       __self: this
     }, "Email"), possiblePermissions.map(function (permission) {
@@ -323,20 +334,20 @@ var Permissions = function Permissions(props) {
         key: permission,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 54
         },
         __self: this
       }, permission);
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 55
       },
       __self: this
     }, "\u21E9"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 58
       },
       __self: this
     }, data.users.map(function (user) {
@@ -345,7 +356,7 @@ var Permissions = function Permissions(props) {
         key: user.id,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 59
         },
         __self: this
       });
@@ -410,19 +421,19 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 99
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 100
         },
         __self: this
       }, user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 101
         },
         __self: this
       }, user.email), possiblePermissions.map(function (permission) {
@@ -430,14 +441,14 @@ function (_React$Component) {
           key: permission,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 91
+            lineNumber: 103
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
           htmlFor: "".concat(user.id, "-permission-").concat(permission),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 92
+            lineNumber: 104
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -448,20 +459,20 @@ function (_React$Component) {
           onChange: _this2.handlePermissionChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 93
+            lineNumber: 105
           },
           __self: this
         })));
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 101
+          lineNumber: 113
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_SickButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 114
         },
         __self: this
       }, "Update")));
@@ -912,7 +923,7 @@ __webpack_require__.r(__webpack_exports__);
 var Table = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.table.withConfig({
   displayName: "Table",
   componentId: "sc-1jvbtk5-0"
-})(["border-spacing:0;width:100%;border:1px solid ", ";thead{font-size:10px;}td,th{border-bottom:1px solid ", ";border-right:1px solid ", ";position:relative;&:last-child{border-right:none;width:150px;button{width:100%;}}label{background:red;display:block;padding:10px 5px;}}tr{&:hover{background:", ";}}"], function (props) {
+})(["border-spacing:0;width:100%;border:1px solid ", ";thead{font-size:10px;}td,th{border-bottom:1px solid ", ";border-right:1px solid ", ";position:relative;&:last-child{border-right:none;width:150px;button{width:100%;}}label{display:block;padding:10px 5px;}}tr{&:hover{background:", ";}}"], function (props) {
   return props.theme.offWhite;
 }, function (props) {
   return props.theme.offWhite;

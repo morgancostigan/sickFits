@@ -20,7 +20,7 @@ const Table = styled.table`
       }
     }
     label {
-      background: red;
+      /* background: red; */
       display: block;
       padding: 10px 5px;
     }
