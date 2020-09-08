@@ -66,6 +66,22 @@ class UserPermissions extends React.Component {
         //normally terrible to use props in setting state, but okay here as we are seeding it and and change will setState
         permissions: this.props.user.permissions,
     }
+    handlePermissionChange = e => {
+        const checkbox = e.target;
+        //make a copy of current permissions
+        let updatedPermissions = [...this.state.permissions];
+        //determine whether to add or remove permission
+        if(checkbox.checked){
+            //add it in
+            updatedPermissions.push(checkbox.value);
+        } else {
+            updatedPermissions = updatedPermissions.filter(
+                permission => permission !== checkbox.value
+            )
+        }//end if
+        this.setState({ permissions: updatedPermissions });
+        console.log(updatedPermissions);
+    }
     render () {
         const user = this.props.user;
         return (
@@ -75,7 +91,11 @@ class UserPermissions extends React.Component {
                 {possiblePermissions.map(permission => (
                     <td key={permission}>
                         <label htmlFor={`${user.id}-permission-${permission}`}>
-                            <input type="checkbox" checked={this.state.permissions.includes(permission)}/>
+                            <input type="checkbox" checked=
+                            {this.state.permissions.includes(permission)}
+                            value={permission}
+                            onChange={this.handlePermissionChange}
+                            />
                         </label>
                     </td>
                 ))}
