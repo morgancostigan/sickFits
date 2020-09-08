@@ -62,6 +62,10 @@ class User extends React.Component {
             permissions: PropTypes.array,
         }).isRequired
     };
+    state = {
+        //normally terrible to use props in setting state, but okay here as we are seeding it and and change will setState
+        permissions: this.props.user.permissions,
+    }
     render () {
         const user = this.props.user;
         return (
