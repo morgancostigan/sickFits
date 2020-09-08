@@ -21,6 +21,14 @@ server.express.use((req, res, next) => {
     next(); 
 })
 
+//create a middleware to populate user on every request
+server.express.use((req, res, next) => {
+    //if no logged in user, skip
+    if(!req.userId) return next();
+    
+
+})
+
 server.start(
     {
         cors: {
