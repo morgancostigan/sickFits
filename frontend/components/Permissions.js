@@ -2,6 +2,7 @@ import { Query } from 'react-apollo';
 import Error from './ErrorMessage';
 import gql from 'graphql-tag';
 import Table from './styles/Table';
+import SickButton from './styles/SickButton';
 
 const possiblePermissions = [
     'USER',
@@ -42,7 +43,7 @@ const Permissions = (props) => (
                             </tr>
                         </thead>
                         <tbody>
-                            {data.users.map(user => user.name)}
+                            {data.users.map(user => <User user={user}/>)}
                         </tbody>                    
                     </Table>
                 </div>
@@ -55,7 +56,20 @@ class User extends React.Component {
     render () {
         const user = this.props.user;
         return (
-            <tr></tr>
+            <tr>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                {possiblePermissions.map(permission => (
+                    <td>
+                        <label htmlFor={`${user.id}-permission-${permission}`}>
+                            <input type="checkbox" />
+                        </label>
+                    </td>
+                ))}
+                <td>
+                    <SickButton>Update</SickButton>
+                </td>
+            </tr>
         )
     }
 }//end
