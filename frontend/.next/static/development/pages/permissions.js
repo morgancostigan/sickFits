@@ -218,6 +218,7 @@ var Permissions = function Permissions(props) {
       __self: this
     }, "Email"), possiblePermissions.map(function (permission) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        key: permission,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 42
@@ -237,8 +238,9 @@ var Permissions = function Permissions(props) {
       },
       __self: this
     }, data.users.map(function (user) {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(User, {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(UserPermissions, {
         user: user,
+        key: user.id,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 47
@@ -250,23 +252,23 @@ var Permissions = function Permissions(props) {
 }; //end const Permissions
 
 
-var User =
+var UserPermissions =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(User, _React$Component);
+  _inherits(UserPermissions, _React$Component);
 
-  function User() {
+  function UserPermissions() {
     var _getPrototypeOf2;
 
     var _this;
 
-    _classCallCheck(this, User);
+    _classCallCheck(this, UserPermissions);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(User)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(UserPermissions)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       //normally terrible to use props in setting state, but okay here as we are seeding it and and change will setState
@@ -276,7 +278,7 @@ function (_React$Component) {
     return _this;
   }
 
-  _createClass(User, [{
+  _createClass(UserPermissions, [{
     key: "render",
     value: function render() {
       var user = this.props.user;
@@ -300,6 +302,7 @@ function (_React$Component) {
         __self: this
       }, user.email), possiblePermissions.map(function (permission) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          key: permission,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 76
@@ -336,11 +339,11 @@ function (_React$Component) {
     }
   }]);
 
-  return User;
+  return UserPermissions;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component); //end
 
 
-_defineProperty(User, "propTypes", {
+_defineProperty(UserPermissions, "propTypes", {
   user: prop_types__WEBPACK_IMPORTED_MODULE_6___default.a.shape({
     id: prop_types__WEBPACK_IMPORTED_MODULE_6___default.a.string,
     name: prop_types__WEBPACK_IMPORTED_MODULE_6___default.a.string,
