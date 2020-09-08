@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken');
 const { randomBytes } = require('crypto'); //for generating random tokens
 const { promisify } = require('util'); //for changing callback function to a promise
 const { transport, makeANiceEmail } = require('../mail');
+const { hasPermission } = require('../utils');
+
 
 const Mutations = {
     async createItem(parent, args, ctx, info) {
@@ -23,7 +25,7 @@ const Mutations = {
             }
         }, info)
         return item;
-    },
+    },//end createItem
 
     updateItem(parent, args, ctx, info){
         //make a copy of the updates
@@ -37,7 +39,7 @@ const Mutations = {
                 id: args.id
             },
         }, info)
-    },
+    },//end updateItem
 
     async deleteItem(parent, args, ctx, info){
         const where = {id: args.id }
@@ -47,7 +49,7 @@ const Mutations = {
         //TODO
         //3. delete
         return ctx.db.mutation.deleteItem ({ where }, info); 
-    },
+    },//end deleteItem
 
     async signup(parent, args, ctx, info) {
         args.email = args.email.toLowerCase();
@@ -70,7 +72,8 @@ const Mutations = {
         });
         //return user to the browser
         return user;
-    },
+    },//end signup
+
     async signin (parent, {email, password}, ctx, info) { //destructured args into {email, password}
         //1 is there a user with this email
         const user = await ctx.db.query.user({where: {email}});
@@ -91,11 +94,13 @@ const Mutations = {
         });
         //5 return the user
         return user;
-    },
+    },//end signin
+
     signout(parent, args, ctx, info) {
         ctx.response.clearCookie('token'); //this is available with cookie-parser
         return {message: 'Adios!'};
-    },
+    },//end signout
+
     async requestReset(parent, args, ctx, info) {
         //1 check if real user
         const user = await ctx.db.query.user({where: {email: args.email}});
@@ -126,7 +131,8 @@ const Mutations = {
         });
         //4 return the message
         return { message: 'Thanking you!' };
-    },
+    },//end requestReset
+
     async resetPassword(parent, args, ctx, info) {
         //1 check if passwords match
         if(args.password !== args.confirmPassword) {
@@ -165,7 +171,33 @@ const Mutations = {
         });
         //8 return "new" user
         return updatedUser;
-    },
+    },//end resetPassword
+
+    async updatePermissions(parent, args, ctx, info) {
+        //1 check if logged in
+        if (!ctx.request.userId) {
+            throw new Error('Ya gotta be logged in for that!');
+        }
+        //2 query current user
+        const currentUser = ctx.db.query.user({
+            where: {
+                id: ctx.request.userId,
+            },
+        }, info );
+        //3 check for permission to update
+        hasPermission(currentUser, ['ADMIN', 'PERMISSIONUPDATE']);
+        //4 update permissions
+        return ctx.db.mutation.updateUser({
+            data: {
+                permissions: {
+                    set: args.permissions
+                }
+            },
+            where: {
+                id: args.userId
+            },
+        }, info );
+    }//end updatePermissions
 };
 
 module.exports = Mutations;
