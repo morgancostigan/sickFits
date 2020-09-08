@@ -33,6 +33,6 @@ type Item {
   createdAt: DateTime! @createdAt
   # DateTime is not a graphQL datatype, but is in Prisma
   updatedAt: DateTime! @updatedAt
-  # user: User!  
+  user: User!  
   # we will bring this back in later
 }
