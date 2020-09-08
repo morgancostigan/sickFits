@@ -281,6 +281,8 @@ function (_React$Component) {
   _createClass(UserPermissions, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var user = this.props.user;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         __source: {
@@ -317,6 +319,7 @@ function (_React$Component) {
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "checkbox",
+          checked: _this2.state.permissions.includes(permission),
           __source: {
             fileName: _jsxFileName,
             lineNumber: 78
