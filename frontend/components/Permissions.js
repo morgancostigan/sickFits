@@ -80,7 +80,6 @@ class UserPermissions extends React.Component {
             )
         }//end if
         this.setState({ permissions: updatedPermissions });
-        console.log(updatedPermissions);
     }
     render () {
         const user = this.props.user;

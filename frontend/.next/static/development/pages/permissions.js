@@ -302,8 +302,6 @@ function (_React$Component) {
       _this.setState({
         permissions: updatedPermissions
       });
-
-      console.log(updatedPermissions);
     });
 
     return _this;
@@ -318,19 +316,19 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 87
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 88
         },
         __self: this
       }, user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 89
         },
         __self: this
       }, user.email), possiblePermissions.map(function (permission) {
@@ -338,14 +336,14 @@ function (_React$Component) {
           key: permission,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 92
+            lineNumber: 91
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
           htmlFor: "".concat(user.id, "-permission-").concat(permission),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 93
+            lineNumber: 92
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -355,20 +353,20 @@ function (_React$Component) {
           onChange: _this2.handlePermissionChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 94
+            lineNumber: 93
           },
           __self: this
         })));
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 101
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_SickButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103
+          lineNumber: 102
         },
         __self: this
       }, "Update")));
