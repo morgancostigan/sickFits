@@ -344,6 +344,13 @@ function (_React$Component) {
             lineNumber: 107
           },
           __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          colSpan: "8",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 107
+          },
+          __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_2__["default"], {
           error: error,
           __source: {
@@ -351,7 +358,7 @@ function (_React$Component) {
             lineNumber: 107
           },
           __self: this
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 108
