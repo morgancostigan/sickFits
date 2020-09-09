@@ -512,7 +512,7 @@ function (_React$Component) {
             lineNumber: 123
           },
           __self: this
-        }, "Update"))));
+        }, "Updat", loading ? 'ing' : 'e'))));
       });
     }
   }]);
