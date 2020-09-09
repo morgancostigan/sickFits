@@ -179,11 +179,12 @@ const Mutations = {
             throw new Error('Ya gotta be logged in for that!');
         }
         //2 query current user
-        const currentUser = ctx.db.query.user({
+        const currentUser = await ctx.db.query.user({
             where: {
                 id: ctx.request.userId,
             },
         }, info );
+        console.log('currentUser', currentUser);
         //3 check for permission to update
         hasPermission(currentUser, ['ADMIN', 'PERMISSIONUPDATE']);
         //4 update permissions
