@@ -432,22 +432,35 @@ function (_React$Component) {
       }, function (updatePermissions, _ref2) {
         var loading = _ref2.loading,
             error = _ref2.error;
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 106
-          },
-          __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, error && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 107
           },
           __self: this
-        }, user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          error: error,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 107
+          },
+          __self: this
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 108
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 109
+          },
+          __self: this
+        }, user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 110
           },
           __self: this
         }, user.email), possiblePermissions.map(function (permission) {
@@ -455,14 +468,14 @@ function (_React$Component) {
             key: permission,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 110
+              lineNumber: 112
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
             htmlFor: "".concat(user.id, "-permission-").concat(permission),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 111
+              lineNumber: 113
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -473,23 +486,26 @@ function (_React$Component) {
             onChange: _this2.handlePermissionChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 112
+              lineNumber: 114
             },
             __self: this
           })));
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 120
+            lineNumber: 122
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_SickButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          type: "button",
+          disabled: loading,
+          onClick: updatePermissions,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 121
+            lineNumber: 123
           },
           __self: this
-        }, "Update")));
+        }, "Update"))));
       });
     }
   }]);

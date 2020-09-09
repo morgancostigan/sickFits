@@ -103,24 +103,30 @@ class UserPermissions extends React.Component {
                 userId: this.props.user.id
             }}>
             {(updatePermissions, {loading, error}) => (
-                <tr>
-                    <td>{user.name}</td>
-                    <td>{user.email}</td>
-                    {possiblePermissions.map(permission => (
-                        <td key={permission}>
-                            <label htmlFor={`${user.id}-permission-${permission}`}>
-                                <input id={`${user.id}-permission-${permission}`}type="checkbox" checked=
-                                {this.state.permissions.includes(permission)}
-                                value={permission}
-                                onChange={this.handlePermissionChange}
-                                />
-                            </label>
+                <>
+                    {error && <tr><Error error={error}/></tr>}
+                    <tr>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
+                        {possiblePermissions.map(permission => (
+                            <td key={permission}>
+                                <label htmlFor={`${user.id}-permission-${permission}`}>
+                                    <input id={`${user.id}-permission-${permission}`}type="checkbox" checked=
+                                    {this.state.permissions.includes(permission)}
+                                    value={permission}
+                                    onChange={this.handlePermissionChange}
+                                    />
+                                </label>
+                            </td>
+                        ))}
+                        <td>
+                            <SickButton
+                            type="button" disabled={loading} 
+                            onClick={updatePermissions}
+                            >Update</SickButton>
                         </td>
-                    ))}
-                    <td>
-                        <SickButton>Update</SickButton>
-                    </td>
-                </tr>
+                    </tr>
+                </>
             )}
             </Mutation>
         )
