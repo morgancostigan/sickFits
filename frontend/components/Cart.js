@@ -5,7 +5,7 @@ import CloseButton from './styles/CloseButton';
 import Supreme from './styles/Supreme';
 
 const Cart = () => {
-    return <CartStyles>
+    return <CartStyles >
         <header>
             <CloseButton title="close">&times;</CloseButton>
             <Supreme>Your Cart</Supreme>
