@@ -808,6 +808,15 @@ function createClient(_ref) {
         },
         headers: headers
       });
+    },
+    //end request
+    //clientState is your local data
+    clientState: {
+      resolvers: {},
+      defaults: {
+        cartOpen: true
+      } //end clientState
+
     }
   });
 }
