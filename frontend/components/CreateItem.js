@@ -39,7 +39,7 @@ class CreateItem extends Component {
     handleChange = (e) => {
         const { name, type, value } = e.target;
         const val = type === 'number' ? parseFloat(value) : value;
-        console.log({ name, type, value });
+        // console.log({ name, type, value });
 
         this.setState({ [name]: val });
     }
@@ -77,7 +77,7 @@ class CreateItem extends Component {
                         //vvv call the mutation vvv
                         const res = await createItem();
                         //vvv move user to single item page for item they just submitted vvv
-                        console.log({res});
+                        // console.log({res});
                         Router.push({
                             pathname: '/item',
                             query: {id: res.data.createItem.id },
