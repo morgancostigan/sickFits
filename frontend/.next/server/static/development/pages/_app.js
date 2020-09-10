@@ -97,11 +97,13 @@ module.exports =
 /*!****************************!*\
   !*** ./components/Cart.js ***!
   \****************************/
-/*! exports provided: default */
+/*! exports provided: default, LOCAL_STATE_QUERY, TOGGLE_CART_MUTATION */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOCAL_STATE_QUERY", function() { return LOCAL_STATE_QUERY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TOGGLE_CART_MUTATION", function() { return TOGGLE_CART_MUTATION; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-apollo */ "react-apollo");
@@ -223,6 +225,7 @@ var Cart = function Cart() {
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Cart);
+
 
 /***/ }),
 
@@ -966,7 +969,14 @@ function createClient(_ref) {
     //end request
     //clientState is your local data
     clientState: {
-      resolvers: {},
+      resolvers: {
+        Mutation: {
+          toggleCart: function toggleCart(_, variables, _ref2) {//read cartOpen value in cache
+
+            var cache = _ref2.cache;
+          }
+        }
+      },
       defaults: {
         cartOpen: true
       } //end clientState
