@@ -847,9 +847,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_with_apollo__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_with_apollo__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var apollo_boost__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! apollo-boost */ "./node_modules/apollo-boost/lib/index.js");
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../config */ "./config.js");
+/* harmony import */ var _components_Cart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Cart */ "./components/Cart.js");
  //works with next.js and apollo
 
  //includes all of the apollo Links
+
 
 
 
@@ -870,9 +872,23 @@ function createClient(_ref) {
     clientState: {
       resolvers: {
         Mutation: {
-          toggleCart: function toggleCart(_, variables, _ref2) {//read cartOpen value in cache
-
+          toggleCart: function toggleCart(_, variables, _ref2) {
             var cache = _ref2.cache;
+
+            //read cartOpen value in cache
+            var _cache$readQuery = cache.readQuery({
+              query: _components_Cart__WEBPACK_IMPORTED_MODULE_3__["LOCAL_STATE_QUERY"]
+            }),
+                cartOpen = _cache$readQuery.cartOpen; //write cart state to the opposite
+
+
+            var data = {
+              data: {
+                cartOpen: !cartOpen
+              }
+            };
+            cache.writeData(data);
+            return data;
           }
         }
       },
