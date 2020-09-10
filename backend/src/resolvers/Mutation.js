@@ -44,9 +44,16 @@ const Mutations = {
     async deleteItem(parent, args, ctx, info){
         const where = {id: args.id }
         //1. find the item
-        const item = await ctx.db.query.item({ where }, `{id title}`);
-        //2. check for permissions to delete
-        //TODO
+        const item = await ctx.db.query.item({ where }, `{id title user{id}}`);
+        
+        //2. check for ownership or permissions to delete
+        const ownsItem = item.user.id === ctx.request.userId;
+        const hasPermissions = ctx.request.user.permissions.some(
+            permission => ['ADMIN', 'ITEMDELETE'].includes(permission)
+        );
+        if(!ownsItem && !hasPermissions){
+            throw new Error(`You're not allowed mate.`);
+        }//end if
         //3. delete
         return ctx.db.mutation.deleteItem ({ where }, info); 
     },//end deleteItem
@@ -184,7 +191,7 @@ const Mutations = {
                 id: ctx.request.userId,
             },
         }, info );
-        console.log('currentUser', currentUser);
+        // console.log('currentUser', currentUser);
         //3 check for permission to update
         hasPermission(currentUser, ['ADMIN', 'PERMISSIONUPDATE']);
         //4 update permissions
