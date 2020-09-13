@@ -8,6 +8,7 @@ import ItemStyles from './styles/ItemStyles';
 import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
 import DeleteItem from './DeleteItem';
+import AddToCart from './AddToCart';
 
 class Item extends Component {
     static propTypes = {
@@ -38,7 +39,7 @@ class Item extends Component {
                 }}>
                 <a>Edit</a>
                 </Link>
-                <button>Add To Cart</button>
+                <AddToCart />
                 <DeleteItem id={item.id}>Delete Da Ting</DeleteItem>
             </div>
         </ItemStyles>
