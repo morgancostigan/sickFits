@@ -44,4 +44,7 @@ type CartItem {
   # item and user represent relationships to Item and User types
   item: Item!
   user: User!
+  # DateTime is not a graphQL datatype, but is in Prisma
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
 }
