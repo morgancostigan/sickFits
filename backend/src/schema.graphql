@@ -48,6 +48,9 @@ type Mutation {
         permissions: [Permission],
         userId: ID!
     ): User
+    addToCart(
+        id: ID!
+    ): CartItem
 }
 
 type Query {
