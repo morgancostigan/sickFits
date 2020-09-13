@@ -224,7 +224,7 @@ const Mutations = {
             return ctx.db.mutation.updateCartItem({
                 where: { id: existingCartItem.id },
                 data: { quantity: existingCartItem.quantity + 1 },
-            });
+            }, info);
         };// end IF
         //4 if false, create fresh CartItem
         return ctx.db.mutation.createCartItem({
