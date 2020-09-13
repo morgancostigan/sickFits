@@ -68,4 +68,5 @@ type User {
     # createdAt: DateTime!
     # updatedAt: DateTime!
     permissions: [Permission!]
+    cart: [CartItem!]! 
 }
