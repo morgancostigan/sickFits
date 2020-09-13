@@ -205,7 +205,7 @@ const Mutations = {
                 id: args.userId
             },
         }, info );
-    }//end updatePermissions
+    },//end updatePermissions
 
     async addToCart(parent, args, ctx, info) {
         //1 check that user is signed in
@@ -215,8 +215,8 @@ const Mutations = {
         }
         //2 query their current cart
         const [existingCartItem] = await ctx.db.query.cartItems({
-            where : {
-                user: { id: userId }, 
+            where: {
+                user: { id: userId },
                 item: { id: args.id },
             },
         });
@@ -235,7 +235,7 @@ const Mutations = {
                 item: { connect: { id: args.id },},
             },
         }, info );
-    }//end addToCart
+    },//end addToCart
 
 };
 
