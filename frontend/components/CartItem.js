@@ -8,7 +8,10 @@ const CartItemStyles = styled.li `
 `;//end CartItemStyles
 
 const CartItem = props => 
-    <CartItemStyles>{props.cartItem.id}</CartItemStyles>
+    <CartItemStyles>
+    {props.cartItem.item.title}    
+    
+    </CartItemStyles>
 ;// end CartItem 
 
 CartItem.propTypes = {
