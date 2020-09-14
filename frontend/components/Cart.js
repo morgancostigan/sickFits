@@ -2,6 +2,7 @@ import React from 'react';
 import { Query, Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import User from './User';
+import CartItem from './CartItem';
 import SickButton from './styles/SickButton';
 import CartStyles from './styles/CartStyles';
 import CloseButton from './styles/CloseButton';
@@ -37,7 +38,9 @@ const Cart = () => (
                                     <p>There {me.cart.length === 1 ? 'is' : 'are'} {me.cart.length} item{me.cart.length === 1 ? '' : 's'} in your cart.</p>
                         </header>
                         <ul>
-                            {me.cart.map(cartItem => <li>{cartItem.id}</li>)}
+                            {me.cart.map(cartItem => 
+                            <CartItem key={cartItem.id} cartItem={cartItem}/>
+                            )}
                         </ul>
 
                         <footer>
