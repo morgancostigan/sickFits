@@ -7,10 +7,19 @@ const CartItemStyles = styled.li `
 
 `;//end CartItemStyles
 
-const CartItem = props => 
+const CartItem = ({cartItem}) => 
     <CartItemStyles>
-        <img width='100' src={props.cartItem.item.image} alt="Image not found"></img>
-    {props.cartItem.item.description}    
+        <img width='100' src={cartItem.item.image} alt={cartItem.item.title} />
+        <div claasName="cart-item-details">
+            <h3>{cartItem.item.title}</h3>
+            <p>
+                {formatMoney(cartItem.item.price * cartItem.quantity)}
+                {' --- '}
+                <em>
+                    {cartItem.quantity} &times; {formatMoney(cartItem.item.price)}
+                </em>
+            </p>
+        </div>
     
     </CartItemStyles>
 ;// end CartItem 
