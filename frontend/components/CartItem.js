@@ -9,7 +9,8 @@ const CartItemStyles = styled.li `
 
 const CartItem = props => 
     <CartItemStyles>
-    {props.cartItem.item.title}    
+        <img width='100' src={props.cartItem.item.image} alt="Image not found"></img>
+    {props.cartItem.item.description}    
     
     </CartItemStyles>
 ;// end CartItem 
