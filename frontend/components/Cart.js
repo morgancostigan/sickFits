@@ -1,6 +1,7 @@
 import React from 'react';
 import { Query, Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
+import User from './User';
 import SickButton from './styles/SickButton';
 import CartStyles from './styles/CartStyles';
 import CloseButton from './styles/CloseButton';
@@ -20,26 +21,31 @@ const TOGGLE_CART_MUTATION = gql `
 `;//end TOGGLE_CART_MUTATION
 
 const Cart = () => ( 
-    <Mutation mutation={TOGGLE_CART_MUTATION}>
-    {(toggleCart) => (
-        <Query query={LOCAL_STATE_QUERY}>
-        {({data}) => (
-            <CartStyles open={data.cartOpen}>
-                <header>
-                    <CloseButton onClick={toggleCart} title="close">
-                        &times;
-                    </CloseButton>
-                    <Supreme>Your Cart</Supreme>
-                    <p>There are ___ items in your cart.</p>
-                </header>
+    <User>{( {data: { me }}) => { 
+        if(!me) return null;        
+        return (
+            <Mutation mutation={TOGGLE_CART_MUTATION}>
+            {(toggleCart) => (
+                <Query query={LOCAL_STATE_QUERY}>
+                {({data}) => (
+                    <CartStyles open={data.cartOpen}>
+                        <header>
+                            <CloseButton onClick={toggleCart} title="close">
+                                &times;
+                            </CloseButton>
+                            <Supreme>{me.name}'s Cart</Supreme>
+                            <p>There are ___ items in your cart.</p>
+                        </header>
 
-                <footer>
-                    <p>$12.00</p>
-                    <SickButton>Check Out</SickButton>
-                </footer>
-            </CartStyles>
-        )}</Query>
-    )}</Mutation>
+                        <footer>
+                            <p>$12.00</p>
+                            <SickButton>Check Out</SickButton>
+                        </footer>
+                    </CartStyles>
+                )}</Query>
+            )}</Mutation>
+        );
+    }}</User>
 );//end 
 
 export default Cart;
