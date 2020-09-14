@@ -211,7 +211,7 @@ var Cart = function Cart() {
             lineNumber: 37
           },
           __self: this
-        }, "There are ___ items in your cart.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
+        }, "There ", me.cart.length === 1 ? 'is' : 'are', " ", me.cart.length, " item", me.cart.length === 1 ? '' : 's', " in your cart.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 40

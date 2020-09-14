@@ -34,7 +34,7 @@ const Cart = () => (
                                 &times;
                             </CloseButton>
                             <Supreme>{me.name}'s Cart</Supreme>
-                            <p>There are ___ items in your cart.</p>
+                                    <p>There {me.cart.length === 1 ? 'is' : 'are'} {me.cart.length} item{me.cart.length === 1 ? '' : 's'} in your cart.</p>
                         </header>
 
                         <footer>
