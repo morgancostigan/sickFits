@@ -36,6 +36,9 @@ const Cart = () => (
                             <Supreme>{me.name}'s Cart</Supreme>
                                     <p>There {me.cart.length === 1 ? 'is' : 'are'} {me.cart.length} item{me.cart.length === 1 ? '' : 's'} in your cart.</p>
                         </header>
+                        <ul>
+                            {me.cart.map(cartItem => <li>{cartItem.id}</li>)}
+                        </ul>
 
                         <footer>
                             <p>$12.00</p>

@@ -211,22 +211,36 @@ var Cart = function Cart() {
             lineNumber: 37
           },
           __self: this
-        }, "There ", me.cart.length === 1 ? 'is' : 'are', " ", me.cart.length, " item", me.cart.length === 1 ? '' : 's', " in your cart.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
+        }, "There ", me.cart.length === 1 ? 'is' : 'are', " ", me.cart.length, " item", me.cart.length === 1 ? '' : 's', " in your cart.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 39
+          },
+          __self: this
+        }, me.cart.map(function (cartItem) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 40
+            },
+            __self: this
+          }, cartItem.id);
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 44
           },
           __self: this
         }, "$12.00"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_SickButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 42
+            lineNumber: 45
           },
           __self: this
         }, "Check Out")));
