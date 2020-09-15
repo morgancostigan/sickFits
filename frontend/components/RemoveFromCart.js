@@ -40,6 +40,7 @@ class RemoveFromCart extends Component {
         const cartItemId = payload.data.removeFromCart.id;
         data.me.cart = data.me.cart.filter(cartItem => cartItem.id !== cartItemId)
         //3 write it back to the cache
+        cache.writeQuery({ query: CURRENT_USER_QUERY, data});
     }
     render() {
         return (
