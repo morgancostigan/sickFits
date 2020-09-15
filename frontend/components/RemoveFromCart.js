@@ -16,6 +16,9 @@ const BigButton = styled.button`
 `;//end BigButton
 
 class RemoveFromCart extends Component {
+    static PropTypes = {
+        id: PropTypes.string.isRequired,
+    };
     render() {
         return <BigButton title="Delete Item">
             &times;
