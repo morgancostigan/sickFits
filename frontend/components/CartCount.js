@@ -4,6 +4,16 @@ import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { CURRENT_USER_QUERY } from './User';
 
+const AnimationStyles = styled.span`
+    position: relative;
+    .count{
+        display: block;
+        position: relative;
+        transition: all 4s;
+        backface-visibility: hidden;
+    }
+`;//end AnimationStyles styles
+
 const Dot = styled.div`
     background: ${props => props.theme.red};
     color: white;
@@ -18,11 +28,16 @@ const Dot = styled.div`
 `;//end Dot styles
 
 const CartCount = ({ count }) => 
-    <TransitionGroup>
-        <CSSTransition>
-            <Dot>{count}</Dot>
-        </CSSTransition>
-    </TransitionGroup>
+    <AnimationStyles>
+        <TransitionGroup>
+            <CSSTransition unmountOnExit
+                className="count" classNames="count"
+                key={count} timeout={{ enter: 4000, exit: 4000 }}
+            >
+                <Dot>{count}</Dot>
+            </CSSTransition>
+        </TransitionGroup>
+    </AnimationStyles>
 ;//end CartCount
 
 export default CartCount;
