@@ -44,9 +44,18 @@ class RemoveFromCart extends Component {
     }
     render() {
         return (
-            <Mutation mutation={REMOVE_FROM_CART_MUTATION} 
+            <Mutation 
+            mutation={REMOVE_FROM_CART_MUTATION} 
             variables={{id: this.props.id}}
-            update={this.update}>
+            update={this.update}
+            //optimisticResponse runs on what you assume the outcome to be
+            optimisticResponse={{
+                __typename: 'Mutation',
+                removeFromCart: {
+                    id: this.props.id,
+                },
+            }}
+            >
                 {(removeFromCart, {loading, error}) => 
                     <BigButton 
                     onClick={() => {
