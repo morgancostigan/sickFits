@@ -8,6 +8,7 @@ import { CURRENT_USER_QUERY } from './User';
 const REMOVE_FROM_CART_MUTATION = gql `
     mutation removeFromCart($id: ID!) {
         removeFromCart(id: $id) {
+            # to remove from cache
             id
         }
     }
@@ -24,13 +25,27 @@ const BigButton = styled.button`
 `;//end BigButton
 
 class RemoveFromCart extends Component {
-    static PropTypes = {
+    static propTypes = {
         id: PropTypes.string.isRequired,
     };
+    //this update function gets called as soon as we get a response from the server that the mutation has been performed
+    //cache is the apollo cache
+    //payload is the return from the server after the gql mutation
+    update = (cache, payload) => {
+        console.log('running remove from cart update function');
+        //1 read the cache
+        const data = cache.readQuery({ query: CURRENT_USER_QUERY});
+        console.log(data);
+        //2 remove item from the cart
+        const cartItemId = payload.data.removeFromCart.id;
+        data.me.cart = data.me.cart.filter(cartItem => cartItem.id !== cartItemId)
+        //3 write it back to the cache
+    }
     render() {
         return (
             <Mutation mutation={REMOVE_FROM_CART_MUTATION} 
-            variables={{id: this.props.id}}>
+            variables={{id: this.props.id}}
+            update={this.update}>
                 {(removeFromCart, {loading, error}) => 
                     <BigButton 
                     onClick={() => {

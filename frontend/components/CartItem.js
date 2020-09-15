@@ -21,7 +21,7 @@ const CartItemStyles = styled.li `
 const CartItem = ({cartItem}) => 
     <CartItemStyles>
         <img width='100' src={cartItem.item.image} alt={cartItem.item.title} />
-        <div claasName="cart-item-details">
+        <div className="cart-item-details">
             <h3>{cartItem.item.title}</h3>
             <p>
                 {formatMoney(cartItem.item.price * cartItem.quantity)}
