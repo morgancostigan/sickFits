@@ -17,7 +17,9 @@ const BigButton = styled.button`
 
 class RemoveFromCart extends Component {
     render() {
-
+        return <BigButton title="Delete Item">
+            &times;
+        </BigButton>
     }
 };//end RemoveFromCart
 
