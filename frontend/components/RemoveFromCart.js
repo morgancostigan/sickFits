@@ -52,6 +52,7 @@ class RemoveFromCart extends Component {
             optimisticResponse={{
                 __typename: 'Mutation',
                 removeFromCart: {
+                    __typename: 'CartItem',
                     id: this.props.id,
                 },
             }}
