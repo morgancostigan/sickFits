@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components'; 
-
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { CURRENT_USER_QUERY } from './User';
 
 const Dot = styled.div`
@@ -18,7 +18,11 @@ const Dot = styled.div`
 `;//end Dot styles
 
 const CartCount = ({ count }) => 
-    <Dot>{count}</Dot>
+    <TransitionGroup>
+        <CSSTransition>
+            <Dot>{count}</Dot>
+        </CSSTransition>
+    </TransitionGroup>
 ;//end CartCount
 
 export default CartCount;
