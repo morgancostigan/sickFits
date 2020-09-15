@@ -28,9 +28,15 @@ class RemoveFromCart extends Component {
         id: PropTypes.string.isRequired,
     };
     render() {
-        return <BigButton title="Delete Item">
-            &times;
-        </BigButton>
+        return (
+            <Mutation mutation={REMOVE_FROM_CART_MUTATION}>
+                {(removeFromCart, {loading, error}) => 
+                    <BigButton title="Delete Item">
+                        &times;
+                    </BigButton>
+                }
+            </Mutation> 
+        );
     }
 };//end RemoveFromCart
 
